@@ -18,14 +18,10 @@
             background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
             transition: all 0.3s ease;
         }
-        .btn-premium:hover {
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
-            transform: scale(1.02);
-        }
         h1, h2, h3, .nav-brand { font-weight: 900; letter-spacing: -0.05em; }
     </style>
 </head>
-<body class="bg-[#05070A] text-slate-100 selection:bg-blue-600">
+<body class="bg-[#05070A] text-slate-100">
 
     <div class="fixed inset-0 bg-[radial-gradient(at_top_left,_#1e3a8a_0%,_transparent_40%)] opacity-20 -z-10"></div>
 
@@ -43,9 +39,6 @@
     </nav>
 
     <header class="max-w-6xl mx-auto px-6 py-20 text-center">
-        <div class="inline-block px-4 py-1.5 mb-6 text-[10px] font-black tracking-[0.3em] text-blue-400 uppercase border border-blue-400/20 rounded-full bg-blue-400/5">
-            Macro-Finance Intelligence
-        </div>
         <h1 class="text-5xl md:text-8xl mb-8 uppercase italic leading-none tracking-tighter">
             KNOW YOUR <span class="text-blue-500">NUMBERS.</span>
         </h1>
@@ -56,12 +49,11 @@
                 src="https://www.youtube.com/embed?listType=user_uploads&list=CanadaWealthLab" 
                 title="Latest from Canadian Wealth Lab" 
                 frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                 allowfullscreen>
             </iframe>
         </div>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <div class="flex justify-center">
             <a href="#tools" class="px-12 py-6 btn-premium rounded-2xl font-black text-xl transition uppercase italic tracking-tight">
                 Access Survival Tools
             </a>
@@ -69,53 +61,3 @@
     </header>
 
     <section id="tools" class="max-w-7xl mx-auto px-6 py-20 border-t border-white/5">
-        <div class="mb-16 text-center">
-            <h2 class="text-3xl md:text-5xl uppercase italic mb-4">The Toolkit</h2>
-            <p class="text-slate-500 text-sm font-medium uppercase tracking-widest italic">Subject-free macro resources</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-8">
-            
-            <div class="glass p-10 rounded-[3rem] border border-white/10 flex flex-col justify-between card-glow transition duration-300">
-                <div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 mb-8 text-2xl font-bold italic">01</div>
-                    <h3 class="text-2xl mb-4 uppercase italic">Equity Stress Test</h3>
-                    <p class="text-slate-400 text-sm mb-10 leading-relaxed italic uppercase tracking-wider">Calculate LTV and GDS ratios to pre-identify renewal flagging.</p>
-                </div>
-                <a href="#" target="_blank" class="w-full py-5 bg-slate-100 text-black rounded-2xl font-black text-center hover:bg-blue-500 hover:text-white transition uppercase italic tracking-widest">Download XLSX</a>
-            </div>
-
-            <div class="glass p-10 rounded-[3rem] border border-white/10 flex flex-col justify-between card-glow transition duration-300">
-                <div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 mb-8 text-2xl font-bold italic">02</div>
-                    <h3 class="text-2xl mb-4 uppercase italic text-white">Cash Flow Analyzer</h3>
-                    <p class="text-slate-400 text-sm mb-10 leading-relaxed italic uppercase tracking-wider">Monthly deficit calculations vs. GTA market rental yields.</p>
-                </div>
-                <a href="#" target="_blank" class="w-full py-5 bg-slate-100 text-black rounded-2xl font-black text-center hover:bg-blue-500 hover:text-white transition uppercase italic tracking-widest">Download XLSX</a>
-            </div>
-
-            <div class="glass p-10 rounded-[3rem] border border-white/10 flex flex-col justify-between card-glow transition duration-300">
-                <div>
-                    <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-500 mb-8 text-2xl font-bold italic">03</div>
-                    <h3 class="text-2xl mb-4 uppercase italic">Private Bridge Math</h3>
-                    <p class="text-slate-400 text-sm mb-10 leading-relaxed italic uppercase tracking-wider">True cost calculations for private lender fees and exit timelines.</p>
-                </div>
-                <a href="#" target="_blank" class="w-full py-5 bg-slate-100 text-black rounded-2xl font-black text-center hover:bg-blue-500 hover:text-white transition uppercase italic tracking-widest">Download XLSX</a>
-            </div>
-
-        </div>
-
-        <div class="mt-20 glass p-16 rounded-[4rem] border border-blue-500/20 text-center relative overflow-hidden">
-            <div class="absolute -top-24 -left-24 w-64 h-64 bg-blue-500/5 blur-[100px]"></div>
-            <h3 class="text-4xl mb-6 uppercase italic">Join the Lab</h3>
-            <p class="text-slate-500 text-xs font-bold uppercase tracking-[0.5em] mb-12 italic">Deep-dive housing macro intelligence</p>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-16 py-6 btn-premium text-white font-black rounded-3xl hover:scale-105 transition inline-block uppercase italic tracking-widest">Subscribe on YouTube</a>
-        </div>
-    </section>
-
-    <footer class="py-24 text-center opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">
-        CWL Market Strategy • 2026
-    </footer>
-
-</body>
-</html>
