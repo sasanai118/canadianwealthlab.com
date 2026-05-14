@@ -9,15 +9,13 @@
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #05070A; color: white; scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: all 0.3s ease; }
-        .glass:hover { border-color: #3b82f6; background: rgba(59, 130, 246, 0.02); }
-        .input-field { background: #000; border: 1px solid #222; border-radius: 12px; padding: 14px; width: 100%; color: white; outline: none; font-size: 1rem; }
+        .glass:hover { border-color: #3b82f6; }
+        .input-field { background: #000; border: 1px solid #222; border-radius: 12px; padding: 14px; width: 100%; color: white; outline: none; }
         .input-field:focus { border-color: #3b82f6; }
-        .result-val { font-weight: 800; font-size: 3rem; letter-spacing: -0.02em; line-height: 1; }
-        .nav-link { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; transition: color 0.2s; }
-        .nav-link:hover { color: white; }
+        .result-val { font-weight: 800; font-size: 3.5rem; letter-spacing: -0.02em; line-height: 1; color: #3b82f6; }
     </style>
 </head>
-<body class="selection:bg-blue-600">
+<body>
 
     <div class="fixed top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] -z-10"></div>
 
@@ -26,13 +24,10 @@
             <img src="Logo.png" alt="CWL Logo" class="h-10">
             <span class="text-xl font-extrabold uppercase tracking-tight">Canadian <span class="text-blue-500">Wealth Lab</span></span>
         </div>
-        <div class="flex items-center gap-8">
-            <a href="#lab" class="nav-link hidden md:block">Calculators</a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition">Subscribe</a>
-        </div>
+        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg shadow-blue-600/20">YouTube</a>
     </nav>
 
-    <header class="max-w-5xl mx-auto px-8 pt-16 pb-24 text-center">
+    <header class="max-w-5xl mx-auto px-8 pt-8 pb-24 text-center">
         <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-12 uppercase">
             Know Your <span class="text-blue-500">Numbers.</span>
         </h1>
@@ -40,38 +35,17 @@
         <div class="max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
             <iframe 
                 class="w-full h-full"
-                src="https://www.youtube.com/embed?listType=user_uploads&list=CanadaWealthLab" 
-                title="Canadian Wealth Lab Content" 
+                src="https://www.youtube.com/embed/IoN_JVXF6A8" 
+                title="Canadian Wealth Lab" 
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
     </header>
 
     <main id="lab" class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="grid lg:grid-cols-2 gap-8 mb-8">
+        <div class="grid lg:grid-cols-2 gap-8 mb-8 text-left">
             
             <div class="glass p-10">
-                <div class="flex justify-between items-start mb-10">
-                    <h2 class="text-lg font-bold uppercase tracking-widest text-blue-500">01. Equity Stress Test</h2>
-                    <span class="text-[10px] bg-white/5 px-3 py-1 rounded-full uppercase font-bold text-slate-500">LTV Calculator</span>
-                </div>
-                <div class="space-y-6 mb-12">
-                    <div>
-                        <label class="text-[10px] font-bold uppercase text-slate-500 block mb-2">Estimated Market Value</label>
-                        <input type="number" id="v" class="input-field" value="1000000" oninput="update()">
-                    </div>
-                    <div>
-                        <label class="text-[10px] font-bold uppercase text-slate-500 block mb-2">Mortgage Balance</label>
-                        <input type="number" id="m" class="input-field" value="750000" oninput="update()">
-                    </div>
-                </div>
-                <div class="bg-white/5 p-8 rounded-2xl text-center">
-                    <p class="text-[10px] font-bold uppercase text-blue-400 mb-3">Loan-to-Value Ratio</p>
-                    <div id="ltv" class="result-val">75.0%</div>
-                    <div id="ltvMsg" class="text-xs font-bold uppercase mt-4 tracking-tighter">Safe Zone</div>
-                </div>
-            </div>
-
-            <div class="glass p-10">
-                <div class="flex justify-between items-start mb-
+                <h2 class="text-sm font-bold uppercase tracking-widest
