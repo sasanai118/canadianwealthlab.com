@@ -5,83 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canadian Wealth Lab | Market Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
-        .btn-glow:hover { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
-        .card-hover:hover { background: rgba(255, 255, 255, 0.05); border-color: rgba(59, 130, 246, 0.5); }
+        .btn-glow:hover { box-shadow: 0 0 25px rgba(59, 130, 246, 0.4); }
+        .title-outline { -webkit-text-stroke: 1px rgba(255,255,255,0.1); }
     </style>
 </head>
-<body class="bg-[#05070A] text-slate-100 selection:bg-blue-500">
+<body class="bg-[#05070A] text-slate-100 selection:bg-blue-600">
 
     <div class="fixed inset-0 bg-[radial-gradient(at_top_left,_#1e3a8a_0%,_transparent_40%)] opacity-20 -z-10"></div>
 
-    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center border-b border-white/5">
-        <div class="text-xl font-black tracking-tighter uppercase italic">
-            CANADIAN <span class="text-blue-500 underline decoration-4 underline-offset-8">WEALTH LAB</span>
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/5">
+        <div class="flex items-center gap-4">
+            <img src="Logo.png" alt="CWL Logo" class="h-14 md:h-16 w-auto">
+            <div class="text-xl font-black tracking-tighter uppercase italic hidden md:block">
+                CANADIAN <span class="text-blue-500">WEALTH LAB</span>
+            </div>
         </div>
-        <div class="hidden md:flex items-center space-x-10 text-xs font-bold uppercase tracking-widest text-slate-500">
-            <a href="#tools" class="hover:text-white transition">Survival Tools</a>
+        <div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+            <a href="#tools" class="hover:text-white transition">Lab Tools</a>
             <a href="https://www.youtube.com/@CanadianWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full btn-glow transition">YouTube</a>
         </div>
     </nav>
 
-    <header class="max-w-5xl mx-auto px-6 py-28 text-center">
-        <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] uppercase italic">
+    <header class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl md:text-8xl font-black mb-8 tracking-tighter uppercase italic leading-none">
             KNOW YOUR <span class="text-blue-500">NUMBERS.</span>
         </h1>
-        <p class="text-xl text-slate-400 max-w-xl mx-auto mb-12 font-medium">
-            Subject-free macro analysis. Just the math you need to survive the 2026 Canadian housing cycle.
-        </p>
+        
+        <div class="max-w-4xl mx-auto mt-12 mb-16 aspect-video rounded-[2rem] overflow-hidden border-4 border-white/5 shadow-2xl glass">
+            <iframe 
+                class="w-full h-full"
+                src="https://www.youtube.com/embed?listType=user_uploads&list=CanadianWealthLab" 
+                title="Latest from Canadian Wealth Lab" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="flex flex-col sm:row justify-center gap-6">
+            <a href="#tools" class="px-12 py-6 bg-blue-600 rounded-2xl font-black text-xl btn-glow transition uppercase italic tracking-tight">
+                Get the 2026 Stress Test
+            </a>
+        </div>
     </header>
 
-    <section id="tools" class="max-w-7xl mx-auto px-6 py-12">
-        <h2 class="text-xs font-black uppercase tracking-[0.4em] text-blue-500 mb-12 text-center">Active Lab Tools</h2>
-        
-        <div class="grid md:grid-cols-3 gap-8">
+    <section id="tools" class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-8">
             
-            <div class="glass p-10 rounded-[2rem] border border-white/10 card-hover transition flex flex-col justify-between">
+            <div class="glass p-10 rounded-[2.5rem] border border-white/10 flex flex-col justify-between hover:border-blue-500/50 transition group">
                 <div>
-                    <div class="text-blue-500 mb-6 text-3xl">📊</div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Equity Stress Test</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">Calculate your LTV and GDS ratios. Identify if your bank will flag you for renewal refusal based on negative equity.</p>
+                    <h3 class="text-3xl font-black mb-4 uppercase italic group-hover:text-blue-400 transition">Equity Stress Test</h3>
+                    <p class="text-slate-400 text-sm mb-10 leading-relaxed italic uppercase tracking-wider">Calculate LTV and GDS ratios before renewal.</p>
                 </div>
-                <a href="#" class="w-full py-4 bg-blue-600 rounded-xl font-black text-center hover:bg-blue-700 transition">DOWNLOAD XLSX</a>
+                <a href="#" class="w-full py-5 bg-blue-600 rounded-2xl font-black text-center hover:bg-blue-700 transition uppercase italic">Download XLSX</a>
             </div>
-
-            <div class="glass p-10 rounded-[2rem] border border-white/10 card-hover transition flex flex-col justify-between">
-                <div>
-                    <div class="text-blue-500 mb-6 text-3xl">🏠</div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Cash Flow Analyzer</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">Based on our "Landlord Trap" episode. Determine if renting your unit covers the 2026 interest rate jump or creates a monthly deficit.</p>
-                </div>
-                <a href="#" class="w-full py-4 bg-slate-800 rounded-xl font-black text-center hover:bg-slate-700 transition">COMING SOON</a>
-            </div>
-
-            <div class="glass p-10 rounded-[2rem] border border-white/10 card-hover transition flex flex-col justify-between">
-                <div>
-                    <div class="text-blue-500 mb-6 text-3xl">🌉</div>
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Private Bridge Cost</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">Calculate the true cost of moving to a 12% private lender. Fees, interest-only payments, and the "exit strategy" timeline.</p>
-                </div>
-                <a href="#" class="w-full py-4 bg-slate-800 rounded-xl font-black text-center hover:bg-slate-700 transition">COMING SOON</a>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="max-w-5xl mx-auto px-6 py-32 text-center">
-        <div class="glass p-16 rounded-[3rem] border border-white/10 relative overflow-hidden">
-            <h2 class="text-4xl font-black mb-6 uppercase italic">Join the Lab</h2>
-            <p class="text-slate-400 mb-10">Get weekly breakdowns on GTA housing, interest rate pivots, and retail localization strategies.</p>
-            <a href="https://www.youtube.com/@CanadianWealthLab" target="_blank" class="px-12 py-6 bg-white text-black font-black text-xl rounded-2xl hover:scale-105 transition inline-block uppercase italic">Subscribe on YouTube</a>
-        </div>
-    </section>
-
-    <footer class="py-20 text-center opacity-30 text-xs font-bold uppercase tracking-[0.3em]">
-        No Generic Explainers. Just Math.
-    </footer>
-
-</body>
-</html>
