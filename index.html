@@ -3,49 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Wealth Lab | Market Intelligence</title>
+    <title>Canadian Wealth Lab | 2026 Housing Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #05070A; color: white; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: all 0.3s ease; }
-        .glass:hover { border-color: #3b82f6; }
-        .input-field { background: #000; border: 1px solid #222; border-radius: 12px; padding: 14px; width: 100%; color: white; outline: none; }
-        .input-field:focus { border-color: #3b82f6; }
-        .result-val { font-weight: 800; font-size: 3.5rem; letter-spacing: -0.02em; line-height: 1; color: #3b82f6; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; background-color: #05070A; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease; }
+        .glass:hover { border-color: rgba(59, 130, 246, 0.4); background: rgba(255, 255, 255, 0.04); }
+        .input-field { background: #000; border: 1px solid #222; border-radius: 12px; padding: 14px; width: 100%; color: white; outline: none; transition: all 0.3s; }
+        .input-field:focus { border-color: #3b82f6; box-shadow: 0 0 15px rgba(59, 130, 246, 0.2); }
+        .result-text { font-weight: 900; font-size: 3.5rem; letter-spacing: -0.05em; font-style: italic; }
+        .badge { background: rgba(59, 130, 246, 0.1); color: #60a5fa; padding: 4px 12px; border-radius: 9999px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
+        h1, h2, h3, .brand { font-weight: 900; letter-spacing: -0.04em; text-transform: uppercase; font-style: italic; }
     </style>
 </head>
-<body>
+<body class="text-slate-100">
 
-    <div class="fixed top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 blur-[120px] -z-10"></div>
+    <div class="fixed inset-0 bg-[radial-gradient(circle_at_top_right,_#1e3a8a_0%,_transparent_45%)] opacity-30 -z-10"></div>
 
-    <nav class="max-w-7xl mx-auto px-8 py-10 flex justify-between items-center">
+    <nav class="max-w-7xl mx-auto px-6 py-8 flex justify-between items-center">
         <div class="flex items-center gap-4">
-            <img src="Logo.png" alt="CWL Logo" class="h-10">
-            <span class="text-xl font-extrabold uppercase tracking-tight">Canadian <span class="text-blue-500">Wealth Lab</span></span>
+            <img src="Logo.png" alt="Logo" class="h-10 md:h-14">
+            <span class="brand text-xl hidden md:block">Canadian <span class="text-blue-500">Wealth Lab</span></span>
         </div>
-        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest transition shadow-lg shadow-blue-600/20">YouTube</a>
+        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-6 py-2.5 bg-blue-600 rounded-full font-black text-[10px] uppercase tracking-widest hover:bg-blue-500 transition shadow-lg shadow-blue-600/20">YouTube</a>
     </nav>
 
-    <header class="max-w-5xl mx-auto px-8 pt-8 pb-24 text-center">
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter leading-none mb-12 uppercase">
+    <header class="max-w-5xl mx-auto px-6 py-24 text-center">
+        <div class="badge mb-6">Market Intelligence Unit</div>
+        <h1 class="text-6xl md:text-8xl mb-8 leading-none">
             Know Your <span class="text-blue-500">Numbers.</span>
         </h1>
-        
-        <div class="max-w-4xl mx-auto aspect-video rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black">
-            <iframe 
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/IoN_JVXF6A8" 
-                title="Canadian Wealth Lab" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-            </iframe>
-        </div>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto italic uppercase tracking-widest">
+            Macro-Finance Strategy for the 2026 Housing Cycle
+        </p>
     </header>
 
-    <main id="lab" class="max-w-7xl mx-auto px-8 pb-32">
-        <div class="grid lg:grid-cols-2 gap-8 mb-8 text-left">
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+        <div class="grid lg:grid-cols-2 gap-8">
             
-            <div class="glass p-10">
-                <h2 class="text-sm font-bold uppercase tracking-widest
+            <div class="glass p-10 rounded-[3rem] flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl mb-8 text-blue-500">01. Equity Stress Test</h3>
+                    <div class="grid gap-6">
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Estimated Market Value ($)</label>
+                            <input type="number" id="v" class="input-field" value="950000" oninput="runAll()">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Mortgage Balance ($)</label>
+                            <input type="number" id="m" class="input-field" value="700000" oninput="runAll()">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-white/5 text-center">
+                    <p class="text-[10px] font-black uppercase text-blue-400 mb-2">Loan-to-Value (LTV)</p>
+                    <div id="ltv" class="result-text text-white">73.7%</div>
+                    <div id="ltvMsg" class="text-xs font-black uppercase italic mt-2 tracking-widest">Target Zone</div>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-[3rem] flex flex-col justify-between">
+                <div>
+                    <h3 class="text-2xl mb-8 text-blue-500">02. Landlord Trap</h3>
+                    <div class="grid gap-6">
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Monthly Gross Rent ($)</label>
+                            <input type="number" id="ri" class="input-field" value="3200" oninput="runAll()">
+                        </div>
+                        <div>
+                            <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Monthly Carrying Costs ($)</label>
+                            <input type="number" id="re" class="input-field" value="3800" oninput="runAll()">
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 pt-8 border-t border-white/5 text-center">
+                    <p class="text-[10px] font-black uppercase text-blue-400 mb-2">Net Cash Flow</p>
+                    <div id="cf" class="result-text text-white">-$600</div>
+                    <div id="cfMsg" class="text-xs font-black uppercase italic mt-2 tracking-widest text-red-500">Deficit Detected</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-8 glass p-10 md:p-16 rounded-[3.5rem] max-w-4xl mx-auto">
+            <h3 class="text-2xl mb-12 text-center text-blue-500 italic">03. Private Bridge Calculator</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center text-left">
+                <div class="space-y-6">
+                    <div>
+                        <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Principal Amount ($)</label>
+                        <input type="number" id="bp" class="input-field" value="500000" oninput="runAll()">
+                    </div>
+                    <div>
+                        <label class="text-[10px] font-black uppercase text-slate-500 block mb-2">Interest Rate (%)</label>
+                        <input type="number" id="br" class="input-field" value="12" oninput="runAll()">
+                    </div>
+                </div>
+                <div class="text-center p-8 bg-blue-600/5 rounded-[2rem] border border-blue-500/10">
+                    <p class="text-[10px] font-black uppercase text-blue-400 mb-2">Monthly Interest Only</p>
+                    <div id="brs" class="result-text text-white text-5xl">$5,000</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-32 text-center border-t border-white/5">
+        <h2 class="text-4xl mb-8 italic">Join the Lab</h2>
+        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-16 py-6 bg-white text-black font-black text-xl rounded-2xl hover:bg-blue-500 hover:text-white transition uppercase italic shadow-2xl">Subscribe on YouTube</a>
+        <div class="mt-24 opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">No Generic Explainers. Just Math.</div>
+    </footer>
+
+    <script>
+        function runAll() {
+            // LTV
+            const v = parseFloat(document.getElementById('v').value) || 0;
+            const m = parseFloat(document.getElementById('m').value) || 0;
+            const ltv = v > 0 ? (m / v) * 100 : 0;
+            const ltvEl = document.getElementById('ltv');
+            const ltvMsg = document.getElementById('ltvMsg');
+            ltvEl.innerText = ltv.toFixed(1) + "%";
+            if (ltv > 80) { ltvMsg.innerText = "Appraisal Risk"; ltvMsg.style.color = "#ef4444"; }
+            else { ltvMsg.innerText = "Target Zone"; ltvMsg.style.color = "#22c55e"; }
+
+            // Cashflow
+            const ri = parseFloat(document.getElementById('ri').value) || 0;
+            const re = parseFloat(document.getElementById('re').value) || 0;
+            const flow = ri - re;
+            const cfEl = document.getElementById('cf');
+            const cfMsg = document.getElementById('cfMsg');
+            cfEl.innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow).toLocaleString();
+            if (flow < 0) { cfMsg.innerText = "Deficit Detected"; cfMsg.style.color = "#ef4444"; }
+            else { cfMsg.innerText = "Positive Flow"; cfMsg.style.color = "#22c55e"; }
+
+            // Bridge
+            const bp = parseFloat(document.getElementById('bp').value) || 0;
+            const br = parseFloat(document.getElementById('br').value) || 0;
+            const monthly = (bp * (br/100)) / 12;
+            document.getElementById('brs').innerText = "$" + Math.round(monthly).toLocaleString();
+        }
+        window.onload = runAll;
+    </script>
+</body>
+</html>
