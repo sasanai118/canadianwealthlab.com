@@ -3,65 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Wealth Lab</title>
+    <title>Canadian Wealth Lab | Macro Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #05070A; color: white; font-family: sans-serif; }
-        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 2rem; padding: 2rem; }
-        .input-box { background: #111; border: 1px solid #333; padding: 10px; width: 100%; border-radius: 8px; color: white; margin-bottom: 15px; }
-        .result { font-weight: 900; font-size: 2.5rem; font-style: italic; color: #3b82f6; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
+        .input-field { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; width: 100%; color: white; outline: none; transition: border 0.3s; }
+        .input-field:focus { border-color: #3b82f6; }
+        .result-card { background: rgba(59, 130, 246, 0.1); border: 1px border-blue-500/20; border-radius: 24px; padding: 24px; text-align: center; }
+        h1, h2, h3, .nav-brand { font-weight: 900; letter-spacing: -0.05em; }
     </style>
 </head>
-<body class="p-6">
+<body class="bg-[#05070A] text-slate-100 selection:bg-blue-600">
 
-    <nav class="max-w-4xl mx-auto flex justify-between items-center mb-16">
-        <img src="Logo.png" class="h-12">
-        <a href="https://www.youtube.com/@CanadaWealthLab" class="text-blue-500 font-bold uppercase text-xs tracking-widest border border-blue-500 px-4 py-2 rounded-full">YouTube</a>
+    <div class="fixed inset-0 bg-[radial-gradient(at_top_left,_#1e3a8a_0%,_transparent_40%)] opacity-20 -z-10"></div>
+
+    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/5">
+        <div class="flex items-center gap-4">
+            <img src="Logo.png" alt="CWL Logo" class="h-14 w-auto">
+            <div class="nav-brand text-xl uppercase italic hidden md:block">
+                CANADIAN <span class="text-blue-500">WEALTH LAB</span>
+            </div>
+        </div>
+        <div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+            <a href="#lab" class="hover:text-white transition">The Lab</a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition uppercase">YouTube</a>
+        </div>
     </nav>
 
-    <header class="text-center mb-20">
-        <h1 class="text-6xl font-black italic tracking-tighter uppercase">Know Your <span class="text-blue-500">Numbers.</span></h1>
+    <header class="max-w-6xl mx-auto px-6 py-20 text-center">
+        <h1 class="text-5xl md:text-8xl mb-12 uppercase italic leading-none tracking-tighter">
+            KNOW YOUR <span class="text-blue-500">NUMBERS.</span>
+        </h1>
+        
+        <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(37,99,235,0.3)] glass mb-20">
+            <iframe 
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/videoseries?list=UUvLzGq-O_G0Z_yGj0Zf6Pnw" 
+                title="Canadian Wealth Lab" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </header>
 
-    <main class="max-w-4xl mx-auto grid gap-8">
-        <div class="glass">
-            <h2 class="text-blue-500 font-black uppercase italic mb-6">01. Equity Stress Test</h2>
-            <label class="text-xs uppercase font-bold text-gray-500">Value ($)</label>
-            <input type="number" id="v" class="input-box" value="800000" oninput="run()">
-            <label class="text-xs uppercase font-bold text-gray-500">Mortgage ($)</label>
-            <input type="number" id="m" class="input-box" value="600000" oninput="run()">
-            <div class="mt-4 p-4 bg-blue-500/10 rounded-xl text-center">
-                <p class="text-xs uppercase font-bold text-blue-400">LTV Ratio</p>
-                <div id="res" class="result">75%</div>
+    <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+        
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div class="glass p-10 rounded-[3rem] border border-white/10">
+                <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest">01. Equity Stress Test</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Estimated Property Value ($)</label>
+                        <input type="number" id="propVal" class="input-field" value="850000" oninput="calcStress()">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Total Mortgage Balance ($)</label>
+                        <input type="number" id="mortVal" class="input-field" value="600000" oninput="calcStress()">
+                    </div>
+                    <div class="result-card mt-6">
+                        <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Loan-to-Value (LTV)</span>
+                        <div id="ltvRes" class="text-4xl font-black italic tracking-tighter">70.6%</div>
+                        <div id="riskRes" class="text-xs font-bold uppercase mt-2 text-green-500 italic">Safe Zone</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass p-10 rounded-[3rem] border border-white/10">
+                <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest">02. Landlord Trap Analyzer</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Monthly Rent Income ($)</label>
+                        <input type="number" id="rentInc" class="input-field" value="2800" oninput="calcRent()">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Total Carrying Cost ($)</label>
+                        <input type="number" id="carryCost" class="input-field" value="3400" oninput="calcRent()">
+                    </div>
+                    <div class="result-card mt-6">
+                        <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Monthly Cash Flow</span>
+                        <div id="cashRes" class="text-4xl font-black italic tracking-tighter">-$600</div>
+                        <div id="trapRes" class="text-xs font-bold uppercase mt-2 text-red-500 italic">Cash Flow Deficit</div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="glass">
-            <h2 class="text-blue-500 font-black uppercase italic mb-6">02. Landlord Trap</h2>
-            <label class="text-xs uppercase font-bold text-gray-500">Rent ($)</label>
-            <input type="number" id="ri" class="input-box" value="3000" oninput="run()">
-            <label class="text-xs uppercase font-bold text-gray-500">Expenses ($)</label>
-            <input type="number" id="re" class="input-box" value="3500" oninput="run()">
-            <div class="mt-4 p-4 bg-blue-500/10 rounded-xl text-center">
-                <p class="text-xs uppercase font-bold text-blue-400">Cash Flow</p>
-                <div id="cf" class="result">-$500</div>
+        <div class="glass p-10 rounded-[3rem] border border-white/10 max-w-4xl mx-auto">
+            <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest text-center">03. Private Bridge Cost</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Loan Principal ($)</label>
+                        <input type="number" id="bridgePrinc" class="input-field" value="500000" oninput="calcBridge()">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Interest Rate (%)</label>
+                        <input type="number" id="bridgeRate" class="input-field" value="12" oninput="calcBridge()">
+                    </div>
+                </div>
+                <div class="result-card flex flex-col justify-center">
+                    <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Monthly Interest Payment</span>
+                    <div id="bridgeRes" class="text-5xl font-black italic tracking-tighter">$5,000</div>
+                    <p class="text-[10px] text-slate-500 mt-4 uppercase italic">Calculated as interest-only.</p>
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
+
+    <footer class="max-w-4xl mx-auto px-6 py-32 text-center">
+        <h3 class="text-4xl mb-6 uppercase italic">Join the Lab</h3>
+        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.5em] mb-12 italic">Deep-Dive Housing Intelligence</p>
+        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-16 py-6 bg-blue-600 text-white font-black rounded-3xl hover:scale-105 transition inline-block uppercase italic tracking-widest shadow-2xl">Subscribe on YouTube</a>
+        <div class="mt-20 opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">© 2026 CWL Strategy</div>
+    </footer>
 
     <script>
-        function run() {
-            const v = document.getElementById('v').value;
-            const m = document.getElementById('m').value;
-            document.getElementById('res').innerText = Math.round((m/v)*100) + "%";
-
-            const ri = document.getElementById('ri').value;
-            const re = document.getElementById('re').value;
-            const flow = ri - re;
-            document.getElementById('cf').innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow);
+        function calcStress() {
+            const v = document.getElementById('propVal').value;
+            const m = document.getElementById('mortVal').value;
+            const ltv = (m / v) * 100;
+            document.getElementById('ltvRes').innerText = ltv.toFixed(1) + "%";
+            const r = document.getElementById('riskRes');
+            if (ltv > 80) { r.innerText = "High Risk / Appraisal Gap"; r.className = "text-xs font-bold uppercase mt-2 text-red-500 italic"; }
+            else { r.innerText = "Safe Zone"; r.className = "text-xs font-bold uppercase mt-2 text-green-500 italic"; }
         }
-        run();
-    </script>
 
+        function calcRent() {
+            const i = document.getElementById('rentInc').value;
+            const c = document.getElementById('carryCost').value;
+            const flow = i - c;
+            document.getElementById('cashRes').innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow).toLocaleString();
+            const t = document.getElementById('trapRes');
+            if (flow < 0) { t.innerText = "Cash Flow Deficit"; t.className = "text-xs font-bold uppercase mt-2 text-red-500 italic"; }
+            else { t.innerText = "Positive Cash Flow"; t.className = "text-xs font-bold uppercase mt-2 text-green-500 italic"; }
+        }
+
+        function calcBridge() {
+            const p = document.getElementById('bridgePrinc').value;
+            const r = document.getElementById('bridgeRate').value;
+            const monthly = (p * (r/100)) / 12;
+            document.getElementById('bridgeRes').innerText = "$" + Math.round(monthly).toLocaleString();
+        }
+
+        // Initialize
+        calcStress(); calcRent(); calcBridge();
+    </script>
 </body>
 </html>
