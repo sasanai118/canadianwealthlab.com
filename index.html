@@ -51,7 +51,7 @@
 
     <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
         
-        <div class="grid md:grid-cols-2 gap-8 mb-8">
+        <div class="grid md:grid-cols-2 gap-8 mb-8 text-left">
             
             <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
                 <h3 class="text-2xl uppercase italic mb-6 text-blue-500">01. Equity Stress Test</h3>
@@ -92,8 +92,8 @@
             </div>
         </div>
 
-        <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl max-w-4xl mx-auto">
-            <h3 class="text-2xl uppercase italic mb-8 text-blue-500 text-center">03. Private Bridge Calculator</h3>
+        <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl max-w-4xl mx-auto text-center">
+            <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Private Bridge Calculator</h3>
             <div class="grid md:grid-cols-2 gap-12 items-center text-left">
                 <div class="space-y-6">
                     <div>
@@ -105,76 +105,3 @@
                         <input type="number" id="bridgeR" class="input-field" value="12" oninput="calculateBridge()">
                     </div>
                 </div>
-                <div class="p-8 bg-blue-600/10 rounded-3xl text-center">
-                    <span class="block text-xs font-bold text-blue-400 uppercase mb-2 tracking-widest">Monthly Interest Only</span>
-                    <div id="bridgeRes" class="text-6xl font-black italic">$5,000</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
-        <div class="glass p-12 rounded-[3rem] border border-blue-500/20">
-            <h3 class="text-3xl mb-6 uppercase italic">Join the Lab</h3>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-12 py-5 btn-premium text-white font-black rounded-2xl hover:scale-105 transition inline-block uppercase italic">Subscribe @CanadaWealthLab</a>
-        </div>
-    </section>
-
-    <script>
-        function calculateStress() {
-            const val = parseFloat(document.getElementById('propValue').value) || 0;
-            const mort = parseFloat(document.getElementById('mortgageBal').value) || 0;
-            const ltv = val > 0 ? (mort / val) * 100 : 0;
-            const result = document.getElementById('ltvResult');
-            const status = document.getElementById('stressStatus');
-            
-            result.innerText = Math.round(ltv) + "%";
-            
-            if (ltv > 80) {
-                status.innerText = "High Risk / Appraisal Gap";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-red-500";
-            } else {
-                status.innerText = "Safe Equity Zone";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-green-400";
-            }
-        }
-
-        function calculateCash() {
-            const inc = parseFloat(document.getElementById('rentInc').value) || 0;
-            const exp = parseFloat(document.getElementById('expenses').value) || 0;
-            const flow = inc - exp;
-            const result = document.getElementById('cashResult');
-            const status = document.getElementById('cashStatus');
-            
-            result.innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow).toLocaleString();
-            
-            if (flow < 0) {
-                status.innerText = "Cash Flow Deficit";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-red-500";
-            } else {
-                status.innerText = "Positive Cash Flow";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-green-400";
-            }
-        }
-
-        function calculateBridge() {
-            const p = parseFloat(document.getElementById('bridgeP').value) || 0;
-            const r = parseFloat(document.getElementById('bridgeR').value) || 0;
-            const monthly = Math.round((p * (r/100)) / 12);
-            document.getElementById('bridgeRes').innerText = "$" + monthly.toLocaleString();
-        }
-
-        // Initialize all calculators on page load
-        window.onload = function() {
-            calculateStress();
-            calculateCash();
-            calculateBridge();
-        };
-    </script>
-
-    <footer class="py-20 text-center opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">
-        CWL Market Strategy • 2026
-    </footer>
-
-</body>
-</html>
