@@ -11,7 +11,7 @@
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
         .input-field { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; width: 100%; color: white; outline: none; transition: border 0.3s; }
         .input-field:focus { border-color: #3b82f6; }
-        .result-card { background: rgba(59, 130, 246, 0.1); border: 1px border-blue-500/20; border-radius: 24px; padding: 24px; text-align: center; }
+        .result-card { background: rgba(59, 130, 246, 0.1); border-radius: 24px; padding: 24px; text-align: center; border: 1px solid rgba(59, 130, 246, 0.2); }
         h1, h2, h3, .nav-brand { font-weight: 900; letter-spacing: -0.05em; }
     </style>
 </head>
@@ -21,7 +21,7 @@
 
     <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center gap-4">
-            <img src="Logo.png" alt="CWL Logo" class="h-14 w-auto">
+            <img src="Logo.png" alt="CWL Logo" class="h-12 md:h-14 w-auto">
             <div class="nav-brand text-xl uppercase italic hidden md:block">
                 CANADIAN <span class="text-blue-500">WEALTH LAB</span>
             </div>
@@ -40,51 +40,53 @@
         <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_0_50px_-12px_rgba(37,99,235,0.3)] glass mb-20">
             <iframe 
                 class="w-full h-full"
-                src="https://www.youtube.com/embed/videoseries?list=UUvLzGq-O_G0Z_yGj0Zf6Pnw" 
+                src="https://www.youtube.com/embed/PASTE_VIDEO_ID_HERE" 
                 title="Canadian Wealth Lab" 
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
     </header>
 
     <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
-        
+        <h2 class="text-center text-3xl uppercase italic mb-16 tracking-widest text-slate-400">Survival Calculator Suite</h2>
+
         <div class="grid md:grid-cols-2 gap-8 mb-8">
             <div class="glass p-10 rounded-[3rem] border border-white/10">
                 <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest">01. Equity Stress Test</h3>
-                <div class="space-y-4">
+                <div class="space-y-4 text-left">
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Estimated Property Value ($)</label>
-                        <input type="number" id="propVal" class="input-field" value="850000" oninput="calcStress()">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Estimated Value ($)</label>
+                        <input type="number" id="propVal" class="input-field" value="800000" oninput="calcStress()">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Total Mortgage Balance ($)</label>
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Mortgage Balance ($)</label>
                         <input type="number" id="mortVal" class="input-field" value="600000" oninput="calcStress()">
                     </div>
                     <div class="result-card mt-6">
                         <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Loan-to-Value (LTV)</span>
-                        <div id="ltvRes" class="text-4xl font-black italic tracking-tighter">70.6%</div>
+                        <div id="ltvRes" class="text-4xl font-black italic tracking-tighter">75.0%</div>
                         <div id="riskRes" class="text-xs font-bold uppercase mt-2 text-green-500 italic">Safe Zone</div>
                     </div>
                 </div>
             </div>
 
             <div class="glass p-10 rounded-[3rem] border border-white/10">
-                <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest">02. Landlord Trap Analyzer</h3>
-                <div class="space-y-4">
+                <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest">02. Landlord Trap</h3>
+                <div class="space-y-4 text-left">
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Monthly Rent Income ($)</label>
-                        <input type="number" id="rentInc" class="input-field" value="2800" oninput="calcRent()">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Monthly Rent ($)</label>
+                        <input type="number" id="rentInc" class="input-field" value="3000" oninput="calcRent()">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Total Carrying Cost ($)</label>
-                        <input type="number" id="carryCost" class="input-field" value="3400" oninput="calcRent()">
+                        <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Total Monthly Expenses ($)</label>
+                        <input type="number" id="carryCost" class="input-field" value="3500" oninput="calcRent()">
                     </div>
                     <div class="result-card mt-6">
                         <span class="block text-[10px] font-bold text-blue-400 uppercase mb-1">Monthly Cash Flow</span>
-                        <div id="cashRes" class="text-4xl font-black italic tracking-tighter">-$600</div>
-                        <div id="trapRes" class="text-xs font-bold uppercase mt-2 text-red-500 italic">Cash Flow Deficit</div>
+                        <div id="cashRes" class="text-4xl font-black italic tracking-tighter">-$500</div>
+                        <div id="trapRes" class="text-xs font-bold uppercase mt-2 text-red-500 italic">Deficit Detected</div>
                     </div>
                 </div>
             </div>
@@ -92,7 +94,7 @@
 
         <div class="glass p-10 rounded-[3rem] border border-white/10 max-w-4xl mx-auto">
             <h3 class="text-2xl mb-6 uppercase italic text-blue-500 font-black tracking-widest text-center">03. Private Bridge Cost</h3>
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 text-left">
                 <div class="space-y-4">
                     <div>
                         <label class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Loan Principal ($)</label>
@@ -114,5 +116,40 @@
 
     <footer class="max-w-4xl mx-auto px-6 py-32 text-center">
         <h3 class="text-4xl mb-6 uppercase italic">Join the Lab</h3>
-        <p class="text-slate-500 text-[10px] font-bold uppercase tracking-[0.5em] mb-12 italic">Deep-Dive Housing Intelligence</p>
-        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-16 py-6 bg-blue-600 text-white font-black rounded
+        <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-16 py-6 bg-blue-600 text-white font-black rounded-3xl hover:scale-105 transition inline-block uppercase italic tracking-widest shadow-2xl">Subscribe on YouTube</a>
+        <div class="mt-20 opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">© 2026 CWL Strategy</div>
+    </footer>
+
+    <script>
+        function calcStress() {
+            const v = parseFloat(document.getElementById('propVal').value) || 0;
+            const m = parseFloat(document.getElementById('mortVal').value) || 0;
+            const ltv = v > 0 ? (m / v) * 100 : 0;
+            document.getElementById('ltvRes').innerText = ltv.toFixed(1) + "%";
+            const r = document.getElementById('riskRes');
+            if (ltv > 80) { r.innerText = "Appraisal Gap Risk"; r.style.color = "#ef4444"; }
+            else { r.innerText = "Safe Zone"; r.style.color = "#22c55e"; }
+        }
+
+        function calcRent() {
+            const i = parseFloat(document.getElementById('rentInc').value) || 0;
+            const c = parseFloat(document.getElementById('carryCost').value) || 0;
+            const flow = i - c;
+            document.getElementById('cashRes').innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow).toLocaleString();
+            const t = document.getElementById('trapRes');
+            if (flow < 0) { t.innerText = "Negative Cash Flow"; t.style.color = "#ef4444"; }
+            else { t.innerText = "Positive Flow"; t.style.color = "#22c55e"; }
+        }
+
+        function calcBridge() {
+            const p = parseFloat(document.getElementById('bridgePrinc').value) || 0;
+            const r = parseFloat(document.getElementById('bridgeRate').value) || 0;
+            const monthly = (p * (r/100)) / 12;
+            document.getElementById('bridgeRes').innerText = "$" + Math.round(monthly).toLocaleString();
+        }
+
+        // Run on load
+        calcStress(); calcRent(); calcBridge();
+    </script>
+</body>
+</html>
