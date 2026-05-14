@@ -49,13 +49,17 @@
         </div>
     </header>
 
-    <section id="lab" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/5">
-        <div class="mb-12 text-center">
-            <h2 class="text-4xl uppercase italic mb-2">The Stress Test Lab</h2>
-            <p class="text-blue-500 font-bold text-xs uppercase tracking-widest">Interactive Calculator</p>
-        </div>
-
-        <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="space-y-6">
+    <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+        <div class="grid md:grid-cols-2 gap-8 mb-8">
+            
+            <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
+                <h3 class="text-2xl uppercase italic mb-6 text-blue-500">01. Equity Stress Test</h3>
+                <div class="space-y-4">
                     <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Property Value ($)</label>
+                        <input type="number" id="propValue" class="input-field" value="800000" oninput="calculateStress()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Mortgage Balance ($)</label>
+                        <input type="number" id="mortgageBal" class="input-field" value="600000" oninput="calculateStress()">
+                    </div>
