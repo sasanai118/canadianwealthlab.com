@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,7 +28,7 @@
         </div>
         <div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
             <a href="#lab" class="hover:text-white transition">The Lab</a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition">YouTube</a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition uppercase">YouTube</a>
         </div>
     </nav>
 
@@ -40,9 +40,10 @@
         <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass mb-20">
             <iframe 
                 class="w-full h-full"
-                src="https://www.youtube.com/embed/videoseries?list=UUvLzGq-O_G0Z_yGj0Zf6Pnw" 
-                title="Canadian Wealth Lab Content" 
+                src="https://www.youtube.com/embed/IoN_JVXF6A8" 
+                title="Canadian Wealth Lab Latest" 
                 frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                 allowfullscreen>
             </iframe>
         </div>
@@ -98,32 +99,6 @@
 
     <script>
         function calculate() {
-            const val = document.getElementById('propValue').value;
-            const mort = document.getElementById('mortgageBal').value;
-            const ltv = (mort / val) * 100;
-            
-            const ltvDisplay = document.getElementById('ltvResult');
-            const statusDisplay = document.getElementById('statusResult');
-            
-            ltvDisplay.innerText = Math.round(ltv) + "%";
-            
-            if (ltv > 80) {
-                statusDisplay.innerText = "High Risk / Appraisal Gap";
-                statusDisplay.className = "text-xl font-bold uppercase italic text-red-500";
-            } else if (ltv > 70) {
-                statusDisplay.innerText = "Moderate Monitoring";
-                statusDisplay.className = "text-xl font-bold uppercase italic text-yellow-500";
-            } else {
-                statusDisplay.innerText = "Low Risk / Strong Equity";
-                statusDisplay.className = "text-xl font-bold uppercase italic text-green-400";
-            }
-        }
-        calculate(); // Initial run
-    </script>
-
-    <footer class="py-20 text-center opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">
-        CWL Market Strategy • 2026
-    </footer>
-
-</body>
-</html>
+            const val = parseFloat(document.getElementById('propValue').value) || 0;
+            const mort = parseFloat(document.getElementById('mortgageBal').value) || 0;
+            const ltv = val > 0 ? (mort /
