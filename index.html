@@ -38,7 +38,6 @@
         </h1>
         
         <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass mb-20">
-            <!-- Updated Embed Link with your correct video ID: khfefhkeIqI -->
             <iframe 
                 class="w-full h-full"
                 src="https://www.youtube.com/embed/khfefhkeIqI" 
@@ -52,78 +51,136 @@
 
     <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
         
-        <div class="grid md:grid-cols-2 gap-8 mb-8 text-left">
+        <div class="space-y-12">
             
-            <!-- 01. Equity Stress Test -->
-            <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-2xl uppercase italic mb-6 text-blue-500">01. Equity Stress Test</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Property Value ($)</label>
-                            <input type="number" id="propValue" class="input-field" value="800000" oninput="calculateStress()">
+            <!-- REWORKED 01. ADVANCED EQUITY STRESS TEST (Matches image_890f3a.png) -->
+            <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
+                <h3 class="text-3xl uppercase italic mb-8 text-blue-500">01. 2026 Equity Stress Test Suite</h3>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Left Column: User Inputs -->
+                    <div class="space-y-6">
+                        <div class="border-b border-white/5 pb-4">
+                            <h4 class="text-sm font-bold uppercase text-blue-400 tracking-wider mb-4">Part 1: The Appraisal Gap</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Original Purchase Price (2021/2022) ($)</label>
+                                    <input type="number" id="origPrice" class="input-field" value="800000" oninput="runAdvancedLabTest()">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Current Mortgage Balance ($)</label>
+                                    <input type="number" id="mortBalance" class="input-field" value="700000" oninput="runAdvancedLabTest()">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Estimated 2026 Market Value ($)</label>
+                                    <input type="number" id="marketValue" class="input-field" value="680000" oninput="runAdvancedLabTest()">
+                                </div>
+                            </div>
                         </div>
+
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Mortgage Balance ($)</label>
-                            <input type="number" id="mortgageBal" class="input-field" value="600000" oninput="calculateStress()">
-                        </div>
-                        <div class="mt-6 p-6 bg-blue-600/10 rounded-2xl text-center">
-                            <span class="block text-xs font-bold text-blue-400 uppercase mb-1 tracking-widest">Loan-to-Value Ratio</span>
-                            <div id="ltvResult" class="text-5xl font-black italic">75%</div>
-                            <div id="stressStatus" class="text-xs font-bold uppercase mt-2 italic text-green-400">Safe Zone</div>
+                            <h4 class="text-sm font-bold uppercase text-blue-400 tracking-wider mb-4">Part 2: The Debt Service Wall</h4>
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Gross Household Income (Annual) ($)</label>
+                                    <input type="number" id="grossIncome" class="input-field" value="120000" oninput="runAdvancedLabTest()">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">New Est. Monthly Mortgage Payment ($)</label>
+                                    <input type="number" id="newPayment" class="input-field" value="3400" oninput="runAdvancedLabTest()">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Annual Taxes + Heating Costs ($)</label>
+                                    <input type="number" id="carryingCosts" class="input-field" value="6500" oninput="runAdvancedLabTest()">
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- Integrated Spreadsheet Link Button -->
-                <div class="mt-6">
-                    <a href="https://docs.google.com/spreadsheets/d/1H5Z4Lzn-Z1Yhkfvhy-GmZ0_8zd-1mAEu/copy" target="_blank" class="block w-full text-center text-xs font-bold uppercase tracking-wider py-4 border border-white/10 rounded-xl hover:bg-blue-600/10 hover:border-blue-500/50 transition text-slate-400 hover:text-white">
-                        📥 Download Stress Test Spreadsheet
-                    </a>
+
+                    <!-- Right Column: Automated Banking Logic Output -->
+                    <div class="flex flex-col justify-between space-y-6 bg-white/[0.02] border border-white/5 p-8 rounded-3xl">
+                        <div class="space-y-6">
+                            <h4 class="text-sm font-bold uppercase text-slate-400 tracking-wider text-center border-b border-white/5 pb-2">Underwriting Desk Metrics</h4>
+                            
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-black/40 p-4 rounded-xl text-center">
+                                    <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Current LTV Ratio</span>
+                                    <div id="ltvPercent" class="text-3xl font-black italic text-white">102.9%</div>
+                                </div>
+                                <div class="bg-black/40 p-4 rounded-xl text-center">
+                                    <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Calculated GDS Ratio</span>
+                                    <div id="gdsPercent" class="text-3xl font-black italic text-white">39.4%</div>
+                                </div>
+                            </div>
+
+                            <div class="bg-black/30 p-4 rounded-xl">
+                                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                    <span>Total Annual Housing Cost:</span>
+                                    <span id="totalHousingCost" class="font-bold text-white">$47,300</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Combined Risk Output Banner -->
+                        <div id="finalRiskBanner" class="p-6 rounded-2xl text-center border transition-all duration-300">
+                            <span class="block text-xs font-black uppercase tracking-widest mb-1">FINAL LAB CHECK RESULT</span>
+                            <div id="finalStatusText" class="text-3xl font-black italic uppercase my-1">REJECTION RISK</div>
+                            <p id="finalStatusDesc" class="text-xs text-slate-400 px-2">LTV exceeds 100% or GDS is past the 39% institutional line framework.</p>
+                        </div>
+
+                        <!-- Fallback spreadsheet backup asset download link -->
+                        <a href="https://docs.google.com/spreadsheets/d/1H5Z4Lzn-Z1Yhkfvhy-GmZ0_8zd-1mAEu/copy" target="_blank" class="block w-full text-center text-[10px] font-bold uppercase tracking-widest py-3 border border-white/5 rounded-xl hover:bg-white/5 transition text-slate-500 hover:text-slate-300">
+                            Or Get The Offline Excel Spreadsheet Asset
+                        </a>
+                    </div>
                 </div>
             </div>
 
             <!-- 02. Landlord Trap Analyzer -->
-            <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
-                <div>
-                    <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Landlord Trap Analyzer</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Gross Rent ($)</label>
-                            <input type="number" id="rentInc" class="input-field" value="3000" oninput="calculateCash()">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Carrying Costs ($)</label>
-                            <input type="number" id="expenses" class="input-field" value="3500" oninput="calculateCash()">
-                        </div>
-                        <div class="mt-6 p-6 bg-blue-600/10 rounded-2xl text-center">
-                            <span class="block text-xs font-bold text-blue-400 uppercase mb-1 tracking-widest">Monthly Cash Flow</span>
-                            <div id="cashResult" class="text-5xl font-black italic">-$500</div>
-                            <div id="cashStatus" class="text-xs font-bold uppercase mt-2 italic text-red-500">Deficit Detected</div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Landlord Trap Analyzer</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Gross Rent ($)</label>
+                                <input type="number" id="rentInc" class="input-field" value="3000" oninput="calculateCash()">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Carrying Costs ($)</label>
+                                <input type="number" id="expenses" class="input-field" value="3500" oninput="calculateCash()">
+                            </div>
+                            <div class="mt-6 p-6 bg-blue-600/10 rounded-2xl text-center">
+                                <span class="block text-xs font-bold text-blue-400 uppercase mb-1 tracking-widest">Monthly Cash Flow</span>
+                                <div id="cashResult" class="text-5xl font-black italic">-$500</div>
+                                <div id="cashStatus" class="text-xs font-bold uppercase mt-2 italic text-red-500">Deficit Detected</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- 03. Private Bridge Calculator -->
-        <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl max-w-4xl mx-auto text-center">
-            <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Private Bridge Calculator</h3>
-            <div class="grid md:grid-cols-2 gap-12 items-center text-left">
-                <div class="space-y-6">
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Principal Amount ($)</label>
-                        <input type="number" id="bridgeP" class="input-field" value="500000" oninput="calculateBridge()">
+                <!-- 03. Private Bridge Calculator -->
+                <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between text-center">
+                    <div class="text-left w-full">
+                        <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Private Bridge Calculator</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Principal Amount ($)</label>
+                                <input type="number" id="bridgeP" class="input-field" value="500000" oninput="calculateBridge()">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Interest Rate (%)</label>
+                                <input type="number" id="bridgeR" class="input-field" value="12" oninput="calculateBridge()">
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Interest Rate (%)</label>
-                        <input type="number" id="bridgeR" class="input-field" value="12" oninput="calculateBridge()">
+                    <div class="p-8 bg-blue-600/10 rounded-3xl text-center w-full mt-6">
+                        <span class="block text-xs font-bold text-blue-400 uppercase mb-2 tracking-widest">Monthly Interest Only</span>
+                        <div id="bridgeRes" class="text-6xl font-black italic">$5,000</div>
                     </div>
-                </div>
-                <div class="p-8 bg-blue-600/10 rounded-3xl text-center">
-                    <span class="block text-xs font-bold text-blue-400 uppercase mb-2 tracking-widest">Monthly Interest Only</span>
-                    <div id="bridgeRes" class="text-6xl font-black italic">$5,000</div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -135,21 +192,49 @@
     </section>
 
     <script>
-        function calculateStress() {
-            const val = parseFloat(document.getElementById('propValue').value) || 0;
-            const mort = parseFloat(document.getElementById('mortgageBal').value) || 0;
-            const ltv = val > 0 ? (mort / val) * 100 : 0;
-            const result = document.getElementById('ltvResult');
-            const status = document.getElementById('stressStatus');
-            result.innerText = Math.round(ltv) + "%";
-            if (ltv > 80) {
-                status.innerText = "High Risk / Appraisal Gap";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-red-500";
+        function runAdvancedLabTest() {
+            // Part 1 Inputs
+            const mortBalance = parseFloat(document.getElementById('mortBalance').value) || 0;
+            const marketValue = parseFloat(document.getElementById('marketValue').value) || 0;
+            
+            // Part 2 Inputs
+            const grossIncome = parseFloat(document.getElementById('grossIncome').value) || 0;
+            const newPayment = parseFloat(document.getElementById('newPayment').value) || 0;
+            const carryingCosts = parseFloat(document.getElementById('carryingCosts').value) || 0;
+
+            // Metrics Calculations
+            const ltv = marketValue > 0 ? (mortBalance / marketValue) * 100 : 0;
+            const annualHousingCost = (newPayment * 12) + carryingCosts;
+            const gds = grossIncome > 0 ? (annualHousingCost / grossIncome) * 100 : 0;
+
+            // Update UI Elements
+            document.getElementById('ltvPercent').innerText = ltv.toFixed(1) + "%";
+            document.getElementById('gdsPercent').innerText = gds.toFixed(1) + "%";
+            document.getElementById('totalHousingCost').innerText = "$" + Math.round(annualHousingCost).toLocaleString();
+
+            const banner = document.getElementById('finalRiskBanner');
+            const statusText = document.getElementById('finalStatusText');
+            const statusDesc = document.getElementById('finalStatusDesc');
+
+            // Automated Banking Risk Logic Evaluation
+            if (ltv > 100 || gds > 39) {
+                // High Risk Settings (Matches Sheet Flag)
+                banner.className = "p-6 rounded-2xl text-center border border-red-500/30 bg-red-950/20 text-red-400";
+                statusText.innerText = "⚠️ REJECTION RISK";
+                statusDesc.innerText = "File flags automated thresholds. Loan-To-Value exceeds 100% or GDS is past the strict 39% benchmark standard framework rules.";
+            } else if (ltv > 80 || gds > 35) {
+                // Warning Settings
+                banner.className = "p-6 rounded-2xl text-center border border-yellow-500/30 bg-yellow-950/10 text-yellow-500";
+                statusText.innerText = "⚡ TIGHTENING BORDERLINE";
+                statusDesc.innerText = "Risk profile evaluated as elevated. Institutional systems may prompt manual file documentation oversight.";
             } else {
-                status.innerText = "Safe Equity Zone";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-green-400";
+                // Clean Pass Settings
+                banner.className = "p-6 rounded-2xl text-center border border-green-500/30 bg-green-950/10 text-green-400";
+                statusText.innerText = "✅ PASS ZONE";
+                statusDesc.innerText = "Metrics tracking cleanly inside conventional parameters. Automated risk analysis profile secure.";
             }
         }
+
         function calculateCash() {
             const inc = parseFloat(document.getElementById('rentInc').value) || 0;
             const exp = parseFloat(document.getElementById('expenses').value) || 0;
@@ -165,14 +250,16 @@
                 status.className = "text-xs font-bold uppercase mt-2 italic text-green-400";
             }
         }
+
         function calculateBridge() {
             const p = parseFloat(document.getElementById('bridgeP').value) || 0;
             const r = parseFloat(document.getElementById('bridgeR').value) || 0;
             const monthly = Math.round((p * (r/100)) / 12);
             document.getElementById('bridgeRes').innerText = "$" + monthly.toLocaleString();
         }
+
         window.onload = function() {
-            calculateStress();
+            runAdvancedLabTest();
             calculateCash();
             calculateBridge();
         };
