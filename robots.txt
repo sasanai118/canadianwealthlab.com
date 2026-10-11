@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://canadianwealthlab.com/sitemap.xml

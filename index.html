@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Wealth Lab | Interactive Market Intelligence</title>
+    <title>Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time</title>
+    <meta name="description" content="Canadian Wealth Lab helps beginners build wealth in Canada — one smart move at a time. Free calculators, plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes.">
+    <link rel="icon" type="image/png" href="Logo.png">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
+    <meta property="og:description" content="Free calculators and plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://canadianwealthlab.com">
+    <meta property="og:image" content="https://canadianwealthlab.com/Logo.png">
+    <!-- Twitter card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
+    <meta name="twitter:description" content="Free calculators and plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
+    <meta name="twitter:image" content="https://canadianwealthlab.com/Logo.png">
+    <!-- SASAN: paste your GA4 measurement ID below to enable analytics
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
@@ -28,35 +50,41 @@
         </div>
         <div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
             <a href="#lab" class="hover:text-white transition">The Lab</a>
+            <a href="#freekit" class="hover:text-white transition">Free Kit</a>
+            <a href="#about" class="hover:text-white transition">About</a>
             <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition uppercase">YouTube</a>
         </div>
     </nav>
 
     <header class="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl md:text-8xl mb-12 uppercase italic leading-none tracking-tighter">
-            KNOW YOUR <span class="text-blue-500">NUMBERS.</span>
+        <h1 class="text-5xl md:text-8xl mb-8 uppercase italic leading-none tracking-tighter">
+            BUILD WEALTH IN <span class="text-blue-500">CANADA.</span>
         </h1>
-        
-        <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass mb-20">
-            <iframe 
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12">
+            One smart move at a time — plain-English guides to TFSAs, RRSPs, FHSAs, CPP, mortgages and taxes. No jargon, no fluff.
+        </p>
+
+        <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass">
+            <iframe
                 class="w-full h-full"
-                src="https://www.youtube.com/embed/khfefhkeIqI" 
-                title="Canadian Wealth Lab Content" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                src="https://www.youtube.com/embed/aKboXLsUdto"
+                title="Canadian Wealth Lab Content"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
             </iframe>
         </div>
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mt-6 mb-4">Latest video — new one every day at 5 PM ET.</p>
     </header>
 
     <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
-        
+
         <div class="space-y-12">
-            
-            <!-- REWORKED 01. ADVANCED EQUITY STRESS TEST (Matches image_890f3a.png) -->
+
+            <!-- 01. MORTGAGE RENEWAL CHECK -->
             <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
-                <h3 class="text-3xl uppercase italic mb-8 text-blue-500">01. 2026 Equity Stress Test Suite</h3>
-                
+                <h3 class="text-3xl uppercase italic mb-8 text-blue-500">01. Mortgage Renewal Check</h3>
+
                 <div class="grid md:grid-cols-2 gap-12">
                     <!-- Left Column: User Inputs -->
                     <div class="space-y-6">
@@ -69,11 +97,11 @@
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Current Mortgage Balance ($)</label>
-                                    <input type="number" id="mortBalance" class="input-field" value="700000" oninput="runAdvancedLabTest()">
+                                    <input type="number" id="mortBalance" class="input-field" value="500000" oninput="runAdvancedLabTest()">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Estimated 2026 Market Value ($)</label>
-                                    <input type="number" id="marketValue" class="input-field" value="680000" oninput="runAdvancedLabTest()">
+                                    <input type="number" id="marketValue" class="input-field" value="850000" oninput="runAdvancedLabTest()">
                                 </div>
                             </div>
                         </div>
@@ -83,49 +111,49 @@
                             <div class="space-y-4">
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Gross Household Income (Annual) ($)</label>
-                                    <input type="number" id="grossIncome" class="input-field" value="120000" oninput="runAdvancedLabTest()">
+                                    <input type="number" id="grossIncome" class="input-field" value="140000" oninput="runAdvancedLabTest()">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-2">New Est. Monthly Mortgage Payment ($)</label>
-                                    <input type="number" id="newPayment" class="input-field" value="3400" oninput="runAdvancedLabTest()">
+                                    <input type="number" id="newPayment" class="input-field" value="2800" oninput="runAdvancedLabTest()">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Annual Taxes + Heating Costs ($)</label>
-                                    <input type="number" id="carryingCosts" class="input-field" value="6500" oninput="runAdvancedLabTest()">
+                                    <input type="number" id="carryingCosts" class="input-field" value="6000" oninput="runAdvancedLabTest()">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Automated Banking Logic Output -->
+                    <!-- Right Column: Results Output -->
                     <div class="flex flex-col justify-between space-y-6 bg-white/[0.02] border border-white/5 p-8 rounded-3xl">
                         <div class="space-y-6">
-                            <h4 class="text-sm font-bold uppercase text-slate-400 tracking-wider text-center border-b border-white/5 pb-2">Underwriting Desk Metrics</h4>
-                            
+                            <h4 class="text-sm font-bold uppercase text-slate-400 tracking-wider text-center border-b border-white/5 pb-2">Your Results</h4>
+
                             <div class="grid grid-cols-2 gap-4">
                                 <div class="bg-black/40 p-4 rounded-xl text-center">
                                     <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Current LTV Ratio</span>
-                                    <div id="ltvPercent" class="text-3xl font-black italic text-white">102.9%</div>
+                                    <div id="ltvPercent" class="text-3xl font-black italic text-white">58.8%</div>
                                 </div>
                                 <div class="bg-black/40 p-4 rounded-xl text-center">
                                     <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Calculated GDS Ratio</span>
-                                    <div id="gdsPercent" class="text-3xl font-black italic text-white">39.4%</div>
+                                    <div id="gdsPercent" class="text-3xl font-black italic text-white">28.3%</div>
                                 </div>
                             </div>
 
                             <div class="bg-black/30 p-4 rounded-xl">
                                 <div class="flex justify-between text-xs text-slate-400 mb-1">
                                     <span>Total Annual Housing Cost:</span>
-                                    <span id="totalHousingCost" class="font-bold text-white">$47,300</span>
+                                    <span id="totalHousingCost" class="font-bold text-white">$39,600</span>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Combined Risk Output Banner -->
+                        <!-- Combined Result Banner -->
                         <div id="finalRiskBanner" class="p-6 rounded-2xl text-center border transition-all duration-300">
-                            <span class="block text-xs font-black uppercase tracking-widest mb-1">FINAL LAB CHECK RESULT</span>
-                            <div id="finalStatusText" class="text-3xl font-black italic uppercase my-1">REJECTION RISK</div>
-                            <p id="finalStatusDesc" class="text-xs text-slate-400 px-2">LTV exceeds 100% or GDS is past the 39% institutional line framework.</p>
+                            <span class="block text-xs font-black uppercase tracking-widest mb-1">YOUR LAB RESULT</span>
+                            <div id="finalStatusText" class="text-3xl font-black italic uppercase my-1">LOOKING GOOD</div>
+                            <p id="finalStatusDesc" class="text-xs text-slate-400 px-2">Your numbers sit comfortably inside typical lender guidelines.</p>
                         </div>
 
                         <!-- Fallback spreadsheet backup asset download link -->
@@ -136,33 +164,32 @@
                 </div>
             </div>
 
-            <!-- 02. Landlord Trap Analyzer -->
+            <!-- 02. RENTAL CASH-FLOW CHECK + 03. BRIDGE LOAN CALCULATOR -->
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
                     <div>
-                        <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Landlord Trap Analyzer</h3>
+                        <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Rental Cash-Flow Check</h3>
                         <div class="space-y-4">
                             <div>
                                 <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Gross Rent ($)</label>
-                                <input type="number" id="rentInc" class="input-field" value="3000" oninput="calculateCash()">
+                                <input type="number" id="rentInc" class="input-field" value="3200" oninput="calculateCash()">
                             </div>
                             <div>
                                 <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Carrying Costs ($)</label>
-                                <input type="number" id="expenses" class="input-field" value="3500" oninput="calculateCash()">
+                                <input type="number" id="expenses" class="input-field" value="2900" oninput="calculateCash()">
                             </div>
                             <div class="mt-6 p-6 bg-blue-600/10 rounded-2xl text-center">
                                 <span class="block text-xs font-bold text-blue-400 uppercase mb-1 tracking-widest">Monthly Cash Flow</span>
-                                <div id="cashResult" class="text-5xl font-black italic">-$500</div>
-                                <div id="cashStatus" class="text-xs font-bold uppercase mt-2 italic text-red-500">Deficit Detected</div>
+                                <div id="cashResult" class="text-5xl font-black italic">$300</div>
+                                <div id="cashStatus" class="text-xs font-bold uppercase mt-2 italic text-green-400">Positive Cash Flow</div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 03. Private Bridge Calculator -->
                 <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between text-center">
                     <div class="text-left w-full">
-                        <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Private Bridge Calculator</h3>
+                        <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Bridge Loan Calculator</h3>
                         <div class="space-y-6">
                             <div>
                                 <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Principal Amount ($)</label>
@@ -184,6 +211,27 @@
         </div>
     </section>
 
+    <!-- EMAIL CAPTURE -->
+    <section id="freekit" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/5">
+        <div class="glass p-8 md:p-12 rounded-[3rem] border border-blue-500/20 shadow-2xl text-center">
+            <h3 class="text-3xl md:text-4xl uppercase italic mb-4">GET THE FREE <span class="text-blue-500">CANADIAN MONEY STARTER KIT</span></h3>
+            <p class="text-slate-400 mb-8 max-w-2xl mx-auto">A one-page cheat sheet: 2026 TFSA, RRSP &amp; FHSA limits, deadlines and the mistakes to avoid. Plus one smart money move in your inbox every week.</p>
+            <!-- FormSubmit activation: on the first-ever submission, FormSubmit sends an activation email to canadianwealthlab@gmail.com — click it once to activate. -->
+            <form id="kitForm" class="max-w-md mx-auto space-y-4">
+                <input type="text" id="kitName" name="name" placeholder="Your name (optional)" class="input-field">
+                <input type="email" id="kitEmail" name="email" placeholder="Your email address" required class="input-field">
+                <button type="submit" class="w-full px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic">Send me the kit</button>
+                <p id="kitMsg" class="text-xs text-slate-500"></p>
+            </form>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/5 text-center">
+        <h3 class="text-3xl uppercase italic mb-6">ABOUT <span class="text-blue-500">THE LAB</span></h3>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Canadian Wealth Lab is a YouTube channel making Canadian personal finance simple for beginners. Every day at 5 PM ET, one money move explained with real Canadian numbers — cross-checked against CRA rules. For education only, not financial advice.</p>
+    </section>
+
     <section class="max-w-4xl mx-auto px-6 py-24 text-center">
         <div class="glass p-12 rounded-[3rem] border border-blue-500/20">
             <h3 class="text-3xl mb-6 uppercase italic">Join the Lab</h3>
@@ -196,7 +244,7 @@
             // Part 1 Inputs
             const mortBalance = parseFloat(document.getElementById('mortBalance').value) || 0;
             const marketValue = parseFloat(document.getElementById('marketValue').value) || 0;
-            
+
             // Part 2 Inputs
             const grossIncome = parseFloat(document.getElementById('grossIncome').value) || 0;
             const newPayment = parseFloat(document.getElementById('newPayment').value) || 0;
@@ -216,22 +264,22 @@
             const statusText = document.getElementById('finalStatusText');
             const statusDesc = document.getElementById('finalStatusDesc');
 
-            // Automated Banking Risk Logic Evaluation
+            // Lab Result Logic
             if (ltv > 100 || gds > 39) {
-                // High Risk Settings (Matches Sheet Flag)
+                // Needs a plan
                 banner.className = "p-6 rounded-2xl text-center border border-red-500/30 bg-red-950/20 text-red-400";
-                statusText.innerText = "⚠️ REJECTION RISK";
-                statusDesc.innerText = "File flags automated thresholds. Loan-To-Value exceeds 100% or GDS is past the strict 39% benchmark standard framework rules.";
+                statusText.innerText = "⚠️ NEEDS A PLAN";
+                statusDesc.innerText = "These numbers would raise flags with a lender. The good news: knowing them is the first step — watch the channel's mortgage videos for what to do next.";
             } else if (ltv > 80 || gds > 35) {
-                // Warning Settings
+                // Tight but workable
                 banner.className = "p-6 rounded-2xl text-center border border-yellow-500/30 bg-yellow-950/10 text-yellow-500";
-                statusText.innerText = "⚡ TIGHTENING BORDERLINE";
-                statusDesc.innerText = "Risk profile evaluated as elevated. Institutional systems may prompt manual file documentation oversight.";
+                statusText.innerText = "⚡ TIGHT BUT WORKABLE";
+                statusDesc.innerText = "You're close to the edge. Small changes — a bigger down payment, lower carrying costs — move these numbers fast.";
             } else {
-                // Clean Pass Settings
+                // Looking good
                 banner.className = "p-6 rounded-2xl text-center border border-green-500/30 bg-green-950/10 text-green-400";
-                statusText.innerText = "✅ PASS ZONE";
-                statusDesc.innerText = "Metrics tracking cleanly inside conventional parameters. Automated risk analysis profile secure.";
+                statusText.innerText = "✅ LOOKING GOOD";
+                statusDesc.innerText = "Your numbers sit comfortably inside typical lender guidelines.";
             }
         }
 
@@ -258,6 +306,23 @@
             document.getElementById('bridgeRes').innerText = "$" + monthly.toLocaleString();
         }
 
+        // Free kit form — FormSubmit AJAX
+        document.getElementById('kitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const msg = document.getElementById('kitMsg');
+            const name = document.getElementById('kitName').value;
+            const email = document.getElementById('kitEmail').value;
+            msg.innerText = "Sending…";
+            fetch('https://formsubmit.co/ajax/canadianwealthlab@gmail.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ name: name, email: email, _subject: 'New Canadian Money Starter Kit signup', _template: 'table' })
+            })
+            .then(function(response) { return response.json(); })
+            .then(function() { window.location.href = 'starter-kit.html'; })
+            .catch(function() { msg.innerText = "Something went wrong — please try again."; });
+        });
+
         window.onload = function() {
             runAdvancedLabTest();
             calculateCash();
@@ -265,8 +330,14 @@
         };
     </script>
 
-    <footer class="py-20 text-center opacity-20 text-[10px] font-black uppercase tracking-[1em] italic">
-        CWL Market Strategy • 2026
+    <footer class="border-t border-white/5 py-10 text-center">
+        <div class="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">
+            <a href="#lab" class="hover:text-white transition">The Lab</a>
+            <a href="#freekit" class="hover:text-white transition">Free Kit</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="hover:text-white transition">YouTube</a>
+        </div>
+        <p class="text-xs text-slate-500">© 2026 Canadian Wealth Lab • For education only — not financial advice.</p>
     </footer>
 
 </body>
