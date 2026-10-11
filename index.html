@@ -43,7 +43,7 @@
 
     <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/5">
         <div class="flex items-center gap-4">
-            <img src="Logo.png" alt="CWL Logo" class="h-14 w-auto">
+            <img src="Logo.png" alt="CWL Logo" class="h-16 w-auto">
             <div class="nav-brand text-xl uppercase italic hidden md:block">
                 CANADIAN <span class="text-blue-500 font-black">WEALTH LAB</span>
             </div>
@@ -60,10 +60,42 @@
         <h1 class="text-5xl md:text-8xl mb-8 uppercase italic leading-none tracking-tighter">
             BUILD WEALTH IN <span class="text-blue-500">CANADA.</span>
         </h1>
-        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12">
-            One smart move at a time — plain-English guides to TFSAs, RRSPs, FHSAs, CPP, mortgages and taxes. No jargon, no fluff.
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
+            You're not bad with money — nobody ever taught you this stuff. Plain-English guides to saving, tax, and your first home, with real Canadian&nbsp;numbers.
         </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
+            <a href="#freekit" class="w-full sm:w-auto px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic min-h-[44px] inline-flex items-center justify-center">Get the Free Starter Kit</a>
+            <a href="#latest" class="text-sm font-bold uppercase tracking-[0.15em] text-blue-400 hover:text-blue-300 transition underline underline-offset-4 min-h-[44px] inline-flex items-center">Watch the Latest Lab Check</a>
+        </div>
+    </header>
 
+    <!-- EMAIL CAPTURE -->
+    <section id="freekit" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5">
+        <div class="glass p-8 md:p-12 rounded-[3rem] border border-blue-500/20 shadow-2xl">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="text-center md:text-left">
+                    <h3 class="text-3xl md:text-4xl uppercase italic mb-4">STOP&nbsp;GUESSING WHERE YOUR MONEY SHOULD&nbsp;GO</h3>
+                    <p class="text-slate-400 mb-8 max-w-2xl md:mx-0 mx-auto">Get the free one-page cheat sheet: 2026 TFSA, RRSP &amp; FHSA limits, key deadlines, and the 3 mistakes beginners make — plus one smart money move in your inbox every week. Unsubscribe anytime.</p>
+                    <!-- FormSubmit activation: on the first-ever submission, FormSubmit sends an activation email to canadianwealthlab@gmail.com — click it once to activate. -->
+                    <form id="kitForm" class="w-full max-w-md mx-auto md:mx-0 space-y-4">
+                        <input type="text" id="kitName" name="name" placeholder="Your name (optional)" class="input-field min-h-[44px]">
+                        <input type="email" id="kitEmail" name="email" placeholder="Your email address" required class="input-field min-h-[44px]">
+                        <button type="submit" class="w-full px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic min-h-[44px]">Send me the kit</button>
+                        <p id="kitMsg" class="text-xs text-slate-500"></p>
+                    </form>
+                </div>
+                <div>
+                    <img src="kit-preview.png" alt="Canadian Money Starter Kit — free one-page cheat sheet preview" class="rounded-2xl border border-white/10 shadow-2xl mx-auto w-full max-w-[320px]">
+                    <p class="text-center text-xs text-slate-500 mt-4 uppercase tracking-[0.15em]">Your free one-page cheat&nbsp;sheet</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST VIDEO -->
+    <section id="latest" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5 text-center">
+        <h3 class="text-3xl uppercase italic mb-4">LATEST <span class="text-blue-500">LAB CHECK</span></h3>
+        <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Watch how we break down one money move with real Canadian numbers — a new video every day at 5 PM ET.</p>
         <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass">
             <iframe
                 class="w-full h-full"
@@ -74,10 +106,29 @@
                 allowfullscreen>
             </iframe>
         </div>
-        <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 mt-6 mb-4">Latest video — new one every day at 5 PM ET.</p>
-    </header>
+    </section>
 
-    <section id="lab" class="max-w-6xl mx-auto px-6 py-20 border-t border-white/5">
+    <!-- START HERE ROADMAP -->
+    <section id="starthere" class="max-w-4xl mx-auto px-6 py-16 border-t border-white/5">
+        <h3 class="text-3xl uppercase italic mb-4 text-center">START <span class="text-blue-500">HERE</span></h3>
+        <p class="text-slate-400 text-center mb-10">New to Canadian money? Follow the path — in&nbsp;order.</p>
+        <div class="space-y-4">
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
+                <span class="text-blue-500 font-black italic mr-3">01</span><span class="font-bold">Open a TFSA</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Your tax-free growth account. Start here, always.</span>
+            </a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
+                <span class="text-blue-500 font-black italic mr-3">02</span><span class="font-bold">Open an RRSP</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Cut your tax bill while you save for retirement.</span>
+            </a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
+                <span class="text-blue-500 font-black italic mr-3">03</span><span class="font-bold">Grab the FHSA if you're renting</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Up to $40,000 of tax-free room toward your first home.</span>
+            </a>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
+                <span class="text-blue-500 font-black italic mr-3">04</span><span class="font-bold">Make your first investment</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">One simple fund beats ten confusing stock picks.</span>
+            </a>
+        </div>
+    </section>
+
+    <section id="lab" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5">
 
         <div class="space-y-12">
 
@@ -164,8 +215,8 @@
                 </div>
             </div>
 
-            <!-- 02. RENTAL CASH-FLOW CHECK + 03. BRIDGE LOAN CALCULATOR -->
-            <div class="grid md:grid-cols-2 gap-8">
+            <!-- 02. RENTAL CASH-FLOW CHECK -->
+            <div class="max-w-3xl mx-auto">
                 <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Rental Cash-Flow Check</h3>
@@ -186,56 +237,22 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between text-center">
-                    <div class="text-left w-full">
-                        <h3 class="text-2xl uppercase italic mb-8 text-blue-500">03. Bridge Loan Calculator</h3>
-                        <div class="space-y-6">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Principal Amount ($)</label>
-                                <input type="number" id="bridgeP" class="input-field" value="500000" oninput="calculateBridge()">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Interest Rate (%)</label>
-                                <input type="number" id="bridgeR" class="input-field" value="12" oninput="calculateBridge()">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8 bg-blue-600/10 rounded-3xl text-center w-full mt-6">
-                        <span class="block text-xs font-bold text-blue-400 uppercase mb-2 tracking-widest">Monthly Interest Only</span>
-                        <div id="bridgeRes" class="text-6xl font-black italic">$5,000</div>
-                    </div>
-                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- EMAIL CAPTURE -->
-    <section id="freekit" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/5">
-        <div class="glass p-8 md:p-12 rounded-[3rem] border border-blue-500/20 shadow-2xl text-center">
-            <h3 class="text-3xl md:text-4xl uppercase italic mb-4">GET THE FREE <span class="text-blue-500">CANADIAN MONEY STARTER KIT</span></h3>
-            <p class="text-slate-400 mb-8 max-w-2xl mx-auto">A one-page cheat sheet: 2026 TFSA, RRSP &amp; FHSA limits, deadlines and the mistakes to avoid. Plus one smart money move in your inbox every week.</p>
-            <!-- FormSubmit activation: on the first-ever submission, FormSubmit sends an activation email to canadianwealthlab@gmail.com — click it once to activate. -->
-            <form id="kitForm" class="max-w-md mx-auto space-y-4">
-                <input type="text" id="kitName" name="name" placeholder="Your name (optional)" class="input-field">
-                <input type="email" id="kitEmail" name="email" placeholder="Your email address" required class="input-field">
-                <button type="submit" class="w-full px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic">Send me the kit</button>
-                <p id="kitMsg" class="text-xs text-slate-500"></p>
-            </form>
-        </div>
-    </section>
-
     <!-- ABOUT -->
-    <section id="about" class="max-w-4xl mx-auto px-6 py-20 border-t border-white/5 text-center">
+    <section id="about" class="max-w-4xl mx-auto px-6 py-16 border-t border-white/5 text-center">
         <h3 class="text-3xl uppercase italic mb-6">ABOUT <span class="text-blue-500">THE LAB</span></h3>
         <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Canadian Wealth Lab is a YouTube channel making Canadian personal finance simple for beginners. Every day at 5 PM ET, one money move explained with real Canadian numbers — cross-checked against CRA rules. For education only, not financial advice.</p>
     </section>
 
-    <section class="max-w-4xl mx-auto px-6 py-24 text-center">
+    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
         <div class="glass p-12 rounded-[3rem] border border-blue-500/20">
-            <h3 class="text-3xl mb-6 uppercase italic">Join the Lab</h3>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-12 py-5 btn-premium text-white font-black rounded-2xl hover:scale-105 transition inline-block uppercase italic">Subscribe @CanadaWealthLab</a>
+            <h3 class="text-3xl mb-4 uppercase italic">Join the Lab</h3>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Want the weekly breakdown? The channel is where we go deeper — a new video every day at 5 PM ET.</p>
+            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-12 py-5 btn-premium text-white font-black rounded-2xl hover:scale-105 transition inline-block uppercase italic min-h-[44px]">Subscribe @CanadaWealthLab</a>
         </div>
     </section>
 
@@ -299,13 +316,10 @@
             }
         }
 
-        function calculateBridge() {
-            const p = parseFloat(document.getElementById('bridgeP').value) || 0;
-            const r = parseFloat(document.getElementById('bridgeR').value) || 0;
-            const monthly = Math.round((p * (r/100)) / 12);
-            document.getElementById('bridgeRes').innerText = "$" + monthly.toLocaleString();
-        }
-
+        window.onload = function() {
+            runAdvancedLabTest();
+            calculateCash();
+        };
         // Free kit form — FormSubmit AJAX
         document.getElementById('kitForm').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -326,7 +340,6 @@
         window.onload = function() {
             runAdvancedLabTest();
             calculateCash();
-            calculateBridge();
         };
     </script>
 
@@ -338,6 +351,7 @@
             <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="hover:text-white transition">YouTube</a>
         </div>
         <p class="text-xs text-slate-500">© 2026 Canadian Wealth Lab • For education only — not financial advice.</p>
+        <p class="text-xs text-slate-600 mt-2">Made with the black cat in Toronto 🇨🇦</p>
     </footer>
 
 </body>
