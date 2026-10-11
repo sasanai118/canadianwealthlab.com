@@ -77,12 +77,14 @@
                     <h3 class="text-3xl md:text-4xl uppercase italic mb-4">STOP&nbsp;GUESSING WHERE YOUR MONEY SHOULD&nbsp;GO</h3>
                     <p class="text-slate-400 mb-8 max-w-2xl md:mx-0 mx-auto">Get the free one-page cheat sheet: 2026 TFSA, RRSP &amp; FHSA limits, key deadlines, and the 3 mistakes beginners make — plus one smart money move in your inbox every week. Unsubscribe anytime.</p>
                     <!-- FormSubmit activation: on the first-ever submission, FormSubmit sends an activation email to canadianwealthlab@gmail.com — click it once to activate. -->
-                    <form id="kitForm" class="w-full max-w-md mx-auto md:mx-0 space-y-4">
-                        <input type="text" id="kitName" name="name" placeholder="Your name (optional)" class="input-field min-h-[44px]">
-                        <input type="email" id="kitEmail" name="email" placeholder="Your email address" required class="input-field min-h-[44px]">
-                        <button type="submit" class="w-full px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic min-h-[44px]">Send me the kit</button>
-                        <p id="kitMsg" class="text-xs text-slate-500"></p>
-                    </form>
+                    <div id="kitEmbedWrap" class="w-full max-w-md mx-auto md:mx-0">
+                        <script async data-uid="a15976ca9d" src="https://canadianwealthlab.kit.com/a15976ca9d/index.js"></script>
+                        <label class="flex items-start gap-3 text-left cursor-pointer mt-4">
+                            <input type="checkbox" id="kitConsent" class="mt-1 min-w-[18px] min-h-[18px] accent-blue-600">
+                            <span class="text-xs text-slate-400">I agree to receive email communications from Canadian Wealth Lab. Unsubscribe anytime.</span>
+                        </label>
+                        <p class="text-xs text-slate-500 mt-2">Double opt-in: check your inbox to confirm your subscription (required by Canadian anti-spam law).</p>
+                    </div>
                 </div>
                 <div>
                     <img src="kit-preview.png" alt="Canadian Money Starter Kit — free one-page cheat sheet preview" class="rounded-2xl border border-white/10 shadow-2xl mx-auto w-full max-w-[320px]">
@@ -320,21 +322,23 @@
             runAdvancedLabTest();
             calculateCash();
         };
-        // Free kit form — FormSubmit AJAX
-        document.getElementById('kitForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const msg = document.getElementById('kitMsg');
-            const name = document.getElementById('kitName').value;
-            const email = document.getElementById('kitEmail').value;
-            msg.innerText = "Sending…";
-            fetch('https://formsubmit.co/ajax/canadianwealthlab@gmail.com', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({ name: name, email: email, _subject: 'New Canadian Money Starter Kit signup', _template: 'table' })
-            })
-            .then(function(response) { return response.json(); })
-            .then(function() { window.location.href = 'starter-kit.html'; })
-            .catch(function() { msg.innerText = "Something went wrong — please try again."; });
+        // Kit form: require CASL consent before enabling submit
+        (function() {
+            const consent = document.getElementById('kitConsent');
+            function gateKitForm() {
+                const btn = document.querySelector('#kitEmbedWrap .formkit-submit');
+                if (btn) btn.disabled = !consent.checked;
+            }
+            if (consent) {
+                consent.addEventListener('change', gateKitForm);
+                // Kit's embed loads async; poll briefly until its button exists
+                let tries = 0;
+                const t = setInterval(function() {
+                    gateKitForm();
+                    if (document.querySelector('#kitEmbedWrap .formkit-submit') || ++tries > 40) clearInterval(t);
+                }, 500);
+            }
+        })();
         });
 
         window.onload = function() {
