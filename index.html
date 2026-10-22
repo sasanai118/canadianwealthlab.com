@@ -1,362 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time</title>
-    <meta name="description" content="Canadian Wealth Lab helps beginners build wealth in Canada — one smart move at a time. Free calculators, plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes.">
-    <link rel="icon" type="image/png" href="Logo.png">
-    <!-- Open Graph -->
-    <meta property="og:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
-    <meta property="og:description" content="Free calculators and plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://canadianwealthlab.com">
-    <meta property="og:image" content="https://canadianwealthlab.com/Logo.png">
-    <!-- Twitter card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
-    <meta name="twitter:description" content="Free calculators and plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
-    <meta name="twitter:image" content="https://canadianwealthlab.com/Logo.png">
-    <!-- SASAN: paste your GA4 measurement ID below to enable analytics
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(12px); }
-        .input-field { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px; width: 100%; color: white; outline: none; transition: border 0.3s; }
-        .input-field:focus { border-color: #3b82f6; }
-        .btn-premium { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); transition: all 0.3s ease; }
-        h1, h2, h3, .nav-brand { font-weight: 900; letter-spacing: -0.05em; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time</title>
+<meta name="description" content="Canadian Wealth Lab helps beginners build wealth in Canada — one smart move at a time. Plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes.">
+<link rel="icon" type="image/png" href="Logo.png">
+<meta property="og:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
+<meta property="og:description" content="Plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://canadianwealthlab.com">
+<meta property="og:image" content="https://canadianwealthlab.com/Logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Canadian Wealth Lab | Build Wealth in Canada — One Smart Move at a Time">
+<meta name="twitter:description" content="Plain-English guides to TFSA, RRSP, FHSA, CPP, mortgages and taxes. New video every day at 5 PM ET.">
+<meta name="twitter:image" content="https://canadianwealthlab.com/Logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titan+One&family=Fredoka:wght@400;500;600&family=Nunito:wght@400;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7E8D0; --cream-light:#FFF8EA; --peach:#F2B880; --rose:#E3A08A;
+    --butter:#F2D38A; --sage:#A8B594; --terra:#D98E6A; --teal:#9DBEBB;
+    --poppy:#D95D39; --poppy-dark:#C24E2E; --ink:#4A3226;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif;font-size:18px;line-height:1.6;color:var(--ink);background:var(--cream)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+  h1,h2{font-family:'Titan One',Georgia,serif;font-weight:400;line-height:1.12}
+  h3,.subhead{font-family:'Fredoka','Trebuchet MS',sans-serif;font-weight:600}
+  .caveat{font-family:'Caveat',cursive;font-size:1.45rem;line-height:1.3}
+  section{padding:104px 0}
+  .eyebrow{font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 30px;border-radius:999px;
+       font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.05rem;text-decoration:none;border:3px solid var(--ink);
+       transition:transform .15s ease,background .15s ease,color .15s ease;cursor:pointer;text-align:center}
+  .btn-poppy{background:var(--poppy);color:#fff;border-color:var(--ink)}
+  .btn-poppy:hover,.btn-poppy:active{background:var(--poppy-dark);color:#fff;transform:translateY(-2px)}
+  .btn-ghost{background:var(--cream-light);color:var(--ink)}
+  .btn-ghost:hover{background:var(--butter);color:var(--ink);transform:translateY(-2px)}
+  .btn-ink{background:var(--ink);color:var(--cream)}
+  .btn-ink:hover{color:var(--cream);transform:translateY(-2px)}
+  .topbar{position:sticky;top:0;z-index:50;background:var(--cream);border-bottom:3px solid var(--ink)}
+  .topbar-in{max-width:1100px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:28px}
+  .wordmark{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.25rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+  .wordmark .leaf{color:var(--poppy)}
+  .topnav{margin-left:auto;display:flex;gap:26px;align-items:center}
+  .topnav a.navlink{color:var(--ink);text-decoration:none;font-family:'Fredoka',sans-serif;font-weight:500}
+  .topnav a.navlink:hover{text-decoration:underline}
+  .topbar .btn{min-height:52px;padding:8px 22px}
+</style>
 </head>
-<body class="bg-[#05070A] text-slate-100">
+<body>
+<style>
+  .hero{background:var(--cream) url('assets-v2/hero-flow-bg.jpg') 45% center/cover no-repeat;
+        padding:72px 0 104px;position:relative;overflow:hidden}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:0 56px;align-items:start;
+             grid-template-areas:"text form" "arch form"}
+  .hero-text{grid-area:text}
+  .hero-form{grid-area:form}
+  .hero .arch-stack{grid-area:arch}
+  .hero h1{font-size:3.6rem;margin:14px 0 10px}
+  .hero .tagline{font-size:1.9rem;margin-bottom:20px}
+  .hero .subcopy{max-width:34rem;margin-bottom:22px}
+  .watch-link{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--poppy)}
+  .watch-link:hover{color:var(--poppy)}
+  .arch-stack{position:relative;padding:14px 26px 0}
+  .arch-outer{background:var(--rose);border:3px solid var(--ink);border-radius:999px 999px 28px 28px;padding:22px 22px 0}
+  .arch-inner{background:var(--peach);border-radius:999px 999px 20px 20px;overflow:hidden}
+  .arch-inner img{width:100%;height:340px;object-fit:cover;object-position:center 30%}
+  .form-card{background:var(--cream-light);border:3px solid var(--ink);border-radius:28px;
+             box-shadow:0 18px 44px rgba(74,50,38,.28);padding:30px 30px 26px;margin-top:28px}
+  .form-card .form-label{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.4rem;margin-bottom:8px}
+  .form-card .form-sub{font-size:1rem;margin-bottom:16px}
+  .form-card .microcopy{font-size:.9rem;margin-top:14px}
+  .consent{display:flex;gap:10px;align-items:flex-start;margin-top:14px;cursor:pointer;font-size:.85rem;line-height:1.45}
+  .consent input{min-width:20px;min-height:20px;margin-top:2px;accent-color:var(--poppy)}
+  .after-submit{display:none;background:var(--sage);border:2px solid var(--ink);border-radius:16px;padding:12px 16px;margin-top:14px;font-size:.95rem}
+  .formkit-form{font-family:'Nunito',sans-serif !important}
+  .stripe{display:flex;height:16px}
+  .stripe span{flex:1}
+  .stripe .s1{background:var(--peach)}.stripe .s2{background:var(--rose)}
+  .stripe .s3{background:var(--terra)}.stripe .s4{background:var(--sage)}
+  .start-here{background:var(--teal)}
+  .start-here h2{font-size:2.5rem;margin-bottom:12px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:44px}
+  .step{background:var(--cream-light);border:3px solid var(--ink);border-radius:28px;overflow:hidden;display:flex;flex-direction:column}
+  .step .cap{height:64px;border-bottom:3px solid var(--ink)}
+  .step .cap-rose{background:var(--rose)}.step .cap-sage{background:var(--sage)}.step .cap-terra{background:var(--terra)}
+  .step .body{padding:24px 26px 30px;display:flex;flex-direction:column;gap:10px;flex:1}
+  .step-num{align-self:flex-start;background:var(--butter);border:2.5px solid var(--ink);border-radius:999px;
+            font-family:'Fredoka',sans-serif;font-weight:600;padding:2px 14px;font-size:.95rem}
+  .step h3{font-size:1.3rem}
+  .step p{flex:1}
+  .footnote{margin-top:30px;font-size:.9rem}
+  .watch{background:var(--cream)}
+  .watch h2{font-size:2.5rem;margin-bottom:12px}
+  .area-label{font-family:'Fredoka',sans-serif;font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.85rem;margin:38px 0 14px}
+  .latest-card{background:var(--cream-light);border:3px solid var(--ink);border-radius:28px;padding:30px;
+               display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .latest-card .lc-text{max-width:36rem}
+  .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
+  .tile{border:3px solid var(--ink);border-radius:24px;padding:24px 24px 20px;color:var(--ink);
+        box-shadow:5px 5px 0 var(--ink)}
+  .tile h3{font-size:1.25rem;margin-bottom:6px}
+  .tile p{font-size:.98rem}
+  .t-peach{background:var(--peach)}.t-sage{background:var(--sage)}.t-rose{background:var(--rose)}
+  .t-teal{background:var(--teal)}.t-terra{background:var(--terra)}.t-butter{background:var(--butter)}
+  .watch-btns{display:flex;gap:18px;flex-wrap:wrap;margin-top:40px}
+</style>
+<style>
+  .about{background:var(--rose)}
+  .about h2{font-size:2.5rem;margin-bottom:24px}
+  .about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:start}
+  .about-panel{background:var(--cream-light);border:3px solid var(--ink);border-radius:28px;padding:34px}
+  .about-panel h3{font-size:1.5rem;margin:26px 0 10px}
+  .about-fig .arch-frame{background:var(--sage);border:3px solid var(--ink);border-radius:999px 999px 28px 28px;padding:20px 20px 0}
+  .about-fig .arch-frame .in{background:var(--cream);border-radius:999px 999px 20px 20px;overflow:hidden}
+  .about-fig img{width:100%;height:420px;object-fit:cover;object-position:center 25%}
+  .about-fig figcaption{color:var(--cream);margin-top:18px;text-align:center}
+  .buffer{background:var(--cream);padding:34px 0;text-align:center}
+  .buffer .leaf{font-size:1.6rem}
+  .kit{background:var(--sage)}
+  .kit h2{font-size:2.5rem;margin-bottom:12px}
+  .kit-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start;margin-top:36px}
+  .paper{background:var(--cream-light);border:3px solid var(--ink);border-radius:12px;box-shadow:0 16px 36px rgba(74,50,38,.25);padding:26px}
+  .paper img{border:2px solid var(--ink);border-radius:8px;margin:0 auto}
+  .paper h3{font-size:1.3rem;margin:20px 0 10px}
+  .paper ul{list-style:none}
+  .paper li{padding:7px 0;border-bottom:2px dashed rgba(74,50,38,.3)}
+  .paper li:last-child{border-bottom:none}
+  .kit-cat{margin-top:26px;background:var(--peach);border:3px solid var(--ink);border-radius:999px 999px 24px 24px;padding:16px 16px 0;overflow:hidden}
+  .kit-cat .in{border-radius:999px 999px 16px 16px;overflow:hidden}
+  .kit-cat img{width:100%;height:250px;object-fit:cover;object-position:center 30%}
+  .kit .form-card{margin-top:0}
+  .kit-note{font-size:.92rem;margin-top:18px}
+  .dl-row{margin-top:20px}
+  footer{background:var(--ink);color:var(--cream);padding:0 0 56px}
+  footer .stripe{margin-bottom:0}
+  .foot-in{max-width:1100px;margin:0 auto;padding:44px 24px 0;position:relative}
+  .foot-sign{font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.4rem;margin-bottom:18px}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:22px}
+  .foot-links a{color:var(--cream);text-decoration:none;font-family:'Fredoka',sans-serif;font-weight:500}
+  .foot-links a:hover{text-decoration:underline}
+  footer .disclaimer{font-size:.88rem;max-width:52rem}
+  footer .copy{font-size:.88rem;margin-top:14px}
+  .foot-tail{position:absolute;right:24px;top:34px;width:92px;background:var(--cream);
+             border:3px solid var(--cream);border-radius:999px 999px 18px 18px;overflow:hidden}
+  .foot-tail img{width:100%;height:110px;object-fit:cover}
+  @media (prefers-reduced-motion:no-preference){
+    .btn:hover{transform:translateY(-2px)}
+  }
+  @media (max-width:900px){
+    .hero{background-position:25% center}
+    .hero-grid{grid-template-columns:1fr;grid-template-areas:"text" "form" "arch"}
+    .about-grid,.kit-grid{grid-template-columns:1fr}
+    .steps,.tiles{grid-template-columns:1fr 1fr}
+    .topnav a.navlink{display:none}
+  }
+  @media (max-width:479px){
+    body{font-size:17px}
+    section{padding:64px 0}
+    .topbar-in{padding:10px 16px;gap:14px}
+    .wordmark{font-size:1.02rem}
+    .topbar .btn{min-height:48px;padding:6px 14px;font-size:.95rem;white-space:nowrap}
+    .hero{padding:18px 0 64px}
+    .hero h1{font-size:2.05rem;margin:8px 0 6px}
+    .hero .tagline{font-size:1.28rem;margin-bottom:10px}
+    .hero .subcopy{margin-bottom:14px}
+    .arch-stack{padding:10px 8px 0}
+    .arch-outer{padding:10px 10px 0}
+    .arch-inner img{height:138px}
+    .form-card{padding:22px 20px;margin-top:16px}
+    .steps,.tiles{grid-template-columns:1fr}
+    .about-fig img{height:320px}
+    .foot-tail{display:none}
+    .btn{width:100%}
+    .watch-btns .btn,.latest-card .btn{width:auto}
+    .topbar .btn{width:auto}
+  }
+</style>
 
-    <div class="fixed inset-0 bg-[radial-gradient(at_top_left,_#1e3a8a_0%,_transparent_40%)] opacity-20 -z-10"></div>
-
-    <nav class="max-w-7xl mx-auto px-6 py-6 flex justify-between items-center border-b border-white/5">
-        <div class="flex items-center gap-4">
-            <img src="Logo.png" alt="CWL Logo" class="h-16 w-auto">
-            <div class="nav-brand text-xl uppercase italic hidden md:block">
-                CANADIAN <span class="text-blue-500 font-black">WEALTH LAB</span>
-            </div>
-        </div>
-        <div class="flex items-center space-x-6 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
-            <a href="#lab" class="hover:text-white transition">The Lab</a>
-            <a href="#freekit" class="hover:text-white transition">Free Kit</a>
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-5 py-2 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-500 hover:text-white transition uppercase">YouTube</a>
-        </div>
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="#top"><span class="leaf">🍁</span> Canadian Wealth Lab</a>
+    <nav class="topnav">
+      <a class="navlink" href="#start-here">Start here</a>
+      <a class="navlink" href="#watch">Watch</a>
+      <a class="navlink" href="#about">About</a>
+      <a class="navlink" href="#starter-kit">Starter Kit</a>
+      <a class="btn btn-poppy" href="#starter-kit">Get the free kit</a>
     </nav>
+  </div>
+</header>
 
-    <header class="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-5xl md:text-8xl mb-8 uppercase italic leading-none tracking-tighter">
-            BUILD WEALTH IN <span class="text-blue-500">CANADA.</span>
-        </h1>
-        <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-300 mb-10">
-            You're not bad with money — nobody ever taught you this stuff. Plain-English guides to saving, tax, and your first home, with real Canadian&nbsp;numbers.
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <a href="#freekit" class="w-full sm:w-auto px-12 py-4 btn-premium text-white font-black rounded-2xl hover:scale-105 transition uppercase italic min-h-[44px] inline-flex items-center justify-center">Get the Free Starter Kit</a>
-            <a href="#latest" class="text-sm font-bold uppercase tracking-[0.15em] text-blue-400 hover:text-blue-300 transition underline underline-offset-4 min-h-[44px] inline-flex items-center">Watch the Latest Lab Check</a>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow">Canadian money, minus the jargon</p>
+      <h1>Canadian Wealth Lab</h1>
+      <h2 class="tagline">Build wealth in Canada, one smart move at a time.</h2>
+      <p class="subcopy">TFSA, RRSP, FHSA, mortgages, CPP. Explained plainly, with a little humour and a cat who has opinions. New video every day at 5 PM ET.</p>
+      <a class="watch-link" href="#watch">or watch the latest video →</a>
+    </div>
+    <div class="hero-form">
+      <div class="form-card" id="kit">
+        <p class="form-label">Free Canadian Money Starter Kit</p>
+        <p class="form-sub">A one-page cheat sheet on TFSA, RRSP and FHSA basics. Where to start, what each one is for, and what people mix up.</p>
+        <div id="kitEmbedWrapHero" class="kit-embed-wrap">
+          <script async data-uid="a15976ca9d" src="https://canadianwealthlab.kit.com/a15976ca9d/index.js"></script>
+          <label class="consent">
+            <input type="checkbox" class="kit-consent">
+            <span>I agree to receive email communications from Canadian Wealth Lab. Unsubscribe anytime.</span>
+          </label>
+          <p class="after-submit">Almost there! Check your inbox for a confirmation email and tap the link inside. (Not there in a few minutes? Peek in your promotions or spam folder.)</p>
         </div>
-    </header>
-
-    <!-- EMAIL CAPTURE -->
-    <section id="freekit" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5">
-        <div class="glass p-8 md:p-12 rounded-[3rem] border border-blue-500/20 shadow-2xl">
-            <div class="grid md:grid-cols-2 gap-10 items-center">
-                <div class="text-center md:text-left">
-                    <h3 class="text-3xl md:text-4xl uppercase italic mb-4">STOP&nbsp;GUESSING WHERE YOUR MONEY SHOULD&nbsp;GO</h3>
-                    <p class="text-slate-400 mb-8 max-w-2xl md:mx-0 mx-auto">Get the free one-page cheat sheet: 2026 TFSA, RRSP &amp; FHSA limits, key deadlines, and the 3 mistakes beginners make — plus one smart money move in your inbox every week. Unsubscribe anytime.</p>
-                    <!-- FormSubmit activation: on the first-ever submission, FormSubmit sends an activation email to canadianwealthlab@gmail.com — click it once to activate. -->
-                    <div id="kitEmbedWrap" class="w-full max-w-md mx-auto md:mx-0">
-                        <script async data-uid="a15976ca9d" src="https://canadianwealthlab.kit.com/a15976ca9d/index.js"></script>
-                        <label class="flex items-start gap-3 text-left cursor-pointer mt-4">
-                            <input type="checkbox" id="kitConsent" class="mt-1 min-w-[18px] min-h-[18px] accent-blue-600">
-                            <span class="text-xs text-slate-400">I agree to receive email communications from Canadian Wealth Lab. Unsubscribe anytime.</span>
-                        </label>
-                        <p class="text-xs text-slate-500 mt-2">Double opt-in: check your inbox to confirm your subscription (required by Canadian anti-spam law).</p>
-                    </div>
-                </div>
-                <div>
-                    <img src="kit-preview.png" alt="Canadian Money Starter Kit — free one-page cheat sheet preview" class="rounded-2xl border border-white/10 shadow-2xl mx-auto w-full max-w-[320px]">
-                    <p class="text-center text-xs text-slate-500 mt-4 uppercase tracking-[0.15em]">Your free one-page cheat&nbsp;sheet</p>
-                </div>
-            </div>
+        <p class="microcopy">We'll email you a quick link to confirm it's really you, then the kit arrives. No spam. Unsubscribe any time.</p>
+      </div>
+    </div>
+    <div class="arch-stack">
+      <div class="arch-outer">
+        <div class="arch-inner">
+          <img src="assets-v2/hero-cat.jpg" alt="Pishi, the black cat, sitting upright and looking at you">
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- LATEST VIDEO -->
-    <section id="latest" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5 text-center">
-        <h3 class="text-3xl uppercase italic mb-4">LATEST <span class="text-blue-500">LAB CHECK</span></h3>
-        <p class="text-slate-400 mb-10 max-w-2xl mx-auto">Watch how we break down one money move with real Canadian numbers — a new video every day at 5 PM ET.</p>
-        <div class="max-w-4xl mx-auto aspect-video rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl glass">
-            <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/aKboXLsUdto"
-                title="Canadian Wealth Lab Content"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+<div class="stripe" aria-hidden="true"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
+
+<section class="start-here" id="start-here">
+  <div class="wrap">
+    <h2>New to all this? Start here.</h2>
+    <p>Three small steps. No homework, no shame.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="cap cap-rose"></div>
+        <div class="body">
+          <span class="step-num">Step 1</span>
+          <h3>Grab the one-pager</h3>
+          <p>Get the cheat sheet. It's the quickest way to learn what a TFSA, RRSP and FHSA each do.</p>
+          <a class="btn btn-ghost" href="#starter-kit">Get the kit</a>
         </div>
-    </section>
-
-    <!-- START HERE ROADMAP -->
-    <section id="starthere" class="max-w-4xl mx-auto px-6 py-16 border-t border-white/5">
-        <h3 class="text-3xl uppercase italic mb-4 text-center">START <span class="text-blue-500">HERE</span></h3>
-        <p class="text-slate-400 text-center mb-10">New to Canadian money? Follow the path — in&nbsp;order.</p>
-        <div class="space-y-4">
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
-                <span class="text-blue-500 font-black italic mr-3">01</span><span class="font-bold">Open a TFSA</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Your tax-free growth account. Start here, always.</span>
-            </a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
-                <span class="text-blue-500 font-black italic mr-3">02</span><span class="font-bold">Open an RRSP</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Cut your tax bill while you save for retirement.</span>
-            </a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
-                <span class="text-blue-500 font-black italic mr-3">03</span><span class="font-bold">Grab the FHSA if you're renting</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">Up to $40,000 of tax-free room toward your first home.</span>
-            </a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="block glass p-6 rounded-2xl border border-white/10 hover:border-blue-500/40 transition min-h-[44px]">
-                <span class="text-blue-500 font-black italic mr-3">04</span><span class="font-bold">Make your first investment</span><span class="text-slate-400 text-sm block sm:inline sm:ml-3">One simple fund beats ten confusing stock picks.</span>
-            </a>
+      </div>
+      <div class="step">
+        <div class="cap cap-sage"></div>
+        <div class="body">
+          <span class="step-num">Step 2</span>
+          <h3>Watch one video</h3>
+          <p>Pick the topic that's on your mind. Most videos run between 5 and 10 minutes.</p>
+          <a class="btn btn-ghost" href="#watch">Pick a topic</a>
         </div>
-    </section>
-
-    <section id="lab" class="max-w-6xl mx-auto px-6 py-16 border-t border-white/5">
-
-        <div class="space-y-12">
-
-            <!-- 01. MORTGAGE RENEWAL CHECK -->
-            <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl">
-                <h3 class="text-3xl uppercase italic mb-8 text-blue-500">01. Mortgage Renewal Check</h3>
-
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Left Column: User Inputs -->
-                    <div class="space-y-6">
-                        <div class="border-b border-white/5 pb-4">
-                            <h4 class="text-sm font-bold uppercase text-blue-400 tracking-wider mb-4">Part 1: The Appraisal Gap</h4>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Original Purchase Price (2021/2022) ($)</label>
-                                    <input type="number" id="origPrice" class="input-field" value="800000" oninput="runAdvancedLabTest()">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Current Mortgage Balance ($)</label>
-                                    <input type="number" id="mortBalance" class="input-field" value="500000" oninput="runAdvancedLabTest()">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Estimated 2026 Market Value ($)</label>
-                                    <input type="number" id="marketValue" class="input-field" value="850000" oninput="runAdvancedLabTest()">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="text-sm font-bold uppercase text-blue-400 tracking-wider mb-4">Part 2: The Debt Service Wall</h4>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Gross Household Income (Annual) ($)</label>
-                                    <input type="number" id="grossIncome" class="input-field" value="140000" oninput="runAdvancedLabTest()">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">New Est. Monthly Mortgage Payment ($)</label>
-                                    <input type="number" id="newPayment" class="input-field" value="2800" oninput="runAdvancedLabTest()">
-                                </div>
-                                <div>
-                                    <label class="block text-xs font-bold text-slate-400 uppercase mb-2">Annual Taxes + Heating Costs ($)</label>
-                                    <input type="number" id="carryingCosts" class="input-field" value="6000" oninput="runAdvancedLabTest()">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Results Output -->
-                    <div class="flex flex-col justify-between space-y-6 bg-white/[0.02] border border-white/5 p-8 rounded-3xl">
-                        <div class="space-y-6">
-                            <h4 class="text-sm font-bold uppercase text-slate-400 tracking-wider text-center border-b border-white/5 pb-2">Your Results</h4>
-
-                            <div class="grid grid-cols-2 gap-4">
-                                <div class="bg-black/40 p-4 rounded-xl text-center">
-                                    <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Current LTV Ratio</span>
-                                    <div id="ltvPercent" class="text-3xl font-black italic text-white">58.8%</div>
-                                </div>
-                                <div class="bg-black/40 p-4 rounded-xl text-center">
-                                    <span class="block text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-1">Calculated GDS Ratio</span>
-                                    <div id="gdsPercent" class="text-3xl font-black italic text-white">28.3%</div>
-                                </div>
-                            </div>
-
-                            <div class="bg-black/30 p-4 rounded-xl">
-                                <div class="flex justify-between text-xs text-slate-400 mb-1">
-                                    <span>Total Annual Housing Cost:</span>
-                                    <span id="totalHousingCost" class="font-bold text-white">$39,600</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Combined Result Banner -->
-                        <div id="finalRiskBanner" class="p-6 rounded-2xl text-center border transition-all duration-300">
-                            <span class="block text-xs font-black uppercase tracking-widest mb-1">YOUR LAB RESULT</span>
-                            <div id="finalStatusText" class="text-3xl font-black italic uppercase my-1">LOOKING GOOD</div>
-                            <p id="finalStatusDesc" class="text-xs text-slate-400 px-2">Your numbers sit comfortably inside typical lender guidelines.</p>
-                        </div>
-
-                        <!-- Fallback spreadsheet backup asset download link -->
-                        <a href="https://docs.google.com/spreadsheets/d/1H5Z4Lzn-Z1Yhkfvhy-GmZ0_8zd-1mAEu/copy" target="_blank" class="block w-full text-center text-[10px] font-bold uppercase tracking-widest py-3 border border-white/5 rounded-xl hover:bg-white/5 transition text-slate-500 hover:text-slate-300">
-                            Or Get The Offline Excel Spreadsheet Asset
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 02. RENTAL CASH-FLOW CHECK -->
-            <div class="max-w-3xl mx-auto">
-                <div class="glass p-8 md:p-12 rounded-[3rem] border border-white/10 shadow-2xl flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-2xl uppercase italic mb-6 text-blue-500">02. Rental Cash-Flow Check</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Gross Rent ($)</label>
-                                <input type="number" id="rentInc" class="input-field" value="3200" oninput="calculateCash()">
-                            </div>
-                            <div>
-                                <label class="block text-xs font-bold text-slate-500 uppercase mb-2">Monthly Carrying Costs ($)</label>
-                                <input type="number" id="expenses" class="input-field" value="2900" oninput="calculateCash()">
-                            </div>
-                            <div class="mt-6 p-6 bg-blue-600/10 rounded-2xl text-center">
-                                <span class="block text-xs font-bold text-blue-400 uppercase mb-1 tracking-widest">Monthly Cash Flow</span>
-                                <div id="cashResult" class="text-5xl font-black italic">$300</div>
-                                <div id="cashStatus" class="text-xs font-bold uppercase mt-2 italic text-green-400">Positive Cash Flow</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+      <div class="step">
+        <div class="cap cap-terra"></div>
+        <div class="body">
+          <span class="step-num">Step 3</span>
+          <h3>Make one small move</h3>
+          <p>Open the account, check a setting, ask one question. One small step beats a perfect plan.</p>
+          <a class="btn btn-ghost" href="#starter-kit">See how it works</a>
         </div>
-    </section>
+      </div>
+    </div>
+    <p class="footnote">Educational content only, not personal financial advice.</p>
+  </div>
+</section>
 
-    <!-- ABOUT -->
-    <section id="about" class="max-w-4xl mx-auto px-6 py-16 border-t border-white/5 text-center">
-        <h3 class="text-3xl uppercase italic mb-6">ABOUT <span class="text-blue-500">THE LAB</span></h3>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Canadian Wealth Lab is a YouTube channel making Canadian personal finance simple for beginners. Every day at 5 PM ET, one money move explained with real Canadian numbers — cross-checked against CRA rules. For education only, not financial advice.</p>
-    </section>
+<section class="watch" id="watch">
+  <div class="wrap">
+    <h2>Fresh on the channel</h2>
+    <p>A new video lands every day at 5 PM ET. Here's where to find your corner of it.</p>
+    <p class="area-label">Latest videos</p>
+    <div class="latest-card">
+      <p class="lc-text">One money move, explained with real Canadian numbers — cross-checked against CRA rules. Today's video is up at 5 PM ET.</p>
+      <a class="btn btn-ghost" href="https://www.youtube.com/@CanadaWealthLab" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+    <p class="area-label">Pick your world</p>
+    <div class="tiles">
+      <div class="tile t-peach"><h3>TFSA</h3><p>Where your tax-free money lives.</p></div>
+      <div class="tile t-sage"><h3>RRSP &amp; FHSA</h3><p>Saving for retirement and your first home.</p></div>
+      <div class="tile t-rose"><h3>CPP &amp; Retirement</h3><p>What you'll get, and when to ask for it.</p></div>
+      <div class="tile t-teal"><h3>Mortgage &amp; Housing</h3><p>Renewals, rates, buying and renting.</p></div>
+      <div class="tile t-terra"><h3>Canadian Family Finance</h3><p>Kids, grants and the household budget.</p></div>
+      <div class="tile t-butter"><h3>Money News</h3><p>What the headlines mean for your wallet.</p></div>
+    </div>
+    <div class="watch-btns">
+      <a class="btn btn-ghost" href="https://www.youtube.com/@CanadaWealthLab" target="_blank" rel="noopener">Watch on YouTube</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/@CanadaWealthLab?sub_confirmation=1" target="_blank" rel="noopener">Subscribe</a>
+    </div>
+  </div>
+</section>
 
-    <section class="max-w-4xl mx-auto px-6 py-16 text-center">
-        <div class="glass p-12 rounded-[3rem] border border-blue-500/20">
-            <h3 class="text-3xl mb-4 uppercase italic">Join the Lab</h3>
-            <p class="text-slate-400 mb-8 max-w-xl mx-auto">Want the weekly breakdown? The channel is where we go deeper — a new video every day at 5 PM ET.</p>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="px-12 py-5 btn-premium text-white font-black rounded-2xl hover:scale-105 transition inline-block uppercase italic min-h-[44px]">Subscribe @CanadaWealthLab</a>
+<section class="about" id="about">
+  <div class="wrap">
+    <h2>What this place is</h2>
+    <div class="about-grid">
+      <div class="about-panel">
+        <p>Canadian Wealth Lab is a daily money channel for Canadians who are just getting started. We explain the stuff nobody taught us in school (accounts, mortgages, retirement benefits) in short animated videos with real Canadian context. No jargon, no hype, no "secret trick" nonsense. Just clear explanations and a friendly nudge. New video every day, 5 PM ET.</p>
+        <h3>Meet Pishi</h3>
+        <p>Pishi is a black cat with golden-green eyes and a tiny white patch on her chest, and she co-hosts every video. She doesn't give financial advice. She bats at numbers, naps on charts and gets seriously startled by bad news. If Pishi is calm, you're probably fine.</p>
+      </div>
+      <figure class="about-fig">
+        <div class="arch-frame">
+          <div class="in">
+            <img src="assets-v2/about-pishi.jpg" alt="Pishi, the black cat, in her portrait">
+          </div>
         </div>
-    </section>
+        <figcaption class="caveat">Pishi, in her natural habitat: on top of the paperwork.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
 
-    <script>
-        function runAdvancedLabTest() {
-            // Part 1 Inputs
-            const mortBalance = parseFloat(document.getElementById('mortBalance').value) || 0;
-            const marketValue = parseFloat(document.getElementById('marketValue').value) || 0;
+<div class="buffer" aria-hidden="true"><span class="leaf">🍁</span></div>
 
-            // Part 2 Inputs
-            const grossIncome = parseFloat(document.getElementById('grossIncome').value) || 0;
-            const newPayment = parseFloat(document.getElementById('newPayment').value) || 0;
-            const carryingCosts = parseFloat(document.getElementById('carryingCosts').value) || 0;
-
-            // Metrics Calculations
-            const ltv = marketValue > 0 ? (mortBalance / marketValue) * 100 : 0;
-            const annualHousingCost = (newPayment * 12) + carryingCosts;
-            const gds = grossIncome > 0 ? (annualHousingCost / grossIncome) * 100 : 0;
-
-            // Update UI Elements
-            document.getElementById('ltvPercent').innerText = ltv.toFixed(1) + "%";
-            document.getElementById('gdsPercent').innerText = gds.toFixed(1) + "%";
-            document.getElementById('totalHousingCost').innerText = "$" + Math.round(annualHousingCost).toLocaleString();
-
-            const banner = document.getElementById('finalRiskBanner');
-            const statusText = document.getElementById('finalStatusText');
-            const statusDesc = document.getElementById('finalStatusDesc');
-
-            // Lab Result Logic
-            if (ltv > 100 || gds > 39) {
-                // Needs a plan
-                banner.className = "p-6 rounded-2xl text-center border border-red-500/30 bg-red-950/20 text-red-400";
-                statusText.innerText = "⚠️ NEEDS A PLAN";
-                statusDesc.innerText = "These numbers would raise flags with a lender. The good news: knowing them is the first step — watch the channel's mortgage videos for what to do next.";
-            } else if (ltv > 80 || gds > 35) {
-                // Tight but workable
-                banner.className = "p-6 rounded-2xl text-center border border-yellow-500/30 bg-yellow-950/10 text-yellow-500";
-                statusText.innerText = "⚡ TIGHT BUT WORKABLE";
-                statusDesc.innerText = "You're close to the edge. Small changes — a bigger down payment, lower carrying costs — move these numbers fast.";
-            } else {
-                // Looking good
-                banner.className = "p-6 rounded-2xl text-center border border-green-500/30 bg-green-950/10 text-green-400";
-                statusText.innerText = "✅ LOOKING GOOD";
-                statusDesc.innerText = "Your numbers sit comfortably inside typical lender guidelines.";
-            }
-        }
-
-        function calculateCash() {
-            const inc = parseFloat(document.getElementById('rentInc').value) || 0;
-            const exp = parseFloat(document.getElementById('expenses').value) || 0;
-            const flow = inc - exp;
-            const result = document.getElementById('cashResult');
-            const status = document.getElementById('cashStatus');
-            result.innerText = (flow < 0 ? "-$" : "$") + Math.abs(flow).toLocaleString();
-            if (flow < 0) {
-                status.innerText = "Cash Flow Deficit";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-red-500";
-            } else {
-                status.innerText = "Positive Cash Flow";
-                status.className = "text-xs font-bold uppercase mt-2 italic text-green-400";
-            }
-        }
-
-        window.onload = function() {
-            runAdvancedLabTest();
-            calculateCash();
-        };
-        // Kit form: require CASL consent before enabling submit
-        (function() {
-            const consent = document.getElementById('kitConsent');
-            function gateKitForm() {
-                const btn = document.querySelector('#kitEmbedWrap .formkit-submit');
-                if (btn) btn.disabled = !consent.checked;
-            }
-            if (consent) {
-                consent.addEventListener('change', gateKitForm);
-                // Kit's embed loads async; poll briefly until its button exists
-                let tries = 0;
-                const t = setInterval(function() {
-                    gateKitForm();
-                    if (document.querySelector('#kitEmbedWrap .formkit-submit') || ++tries > 40) clearInterval(t);
-                }, 500);
-            }
-        })();
-        });
-
-        window.onload = function() {
-            runAdvancedLabTest();
-            calculateCash();
-        };
-    </script>
-
-    <footer class="border-t border-white/5 py-10 text-center">
-        <div class="flex justify-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500 mb-4">
-            <a href="#lab" class="hover:text-white transition">The Lab</a>
-            <a href="#freekit" class="hover:text-white transition">Free Kit</a>
-            <a href="#about" class="hover:text-white transition">About</a>
-            <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" class="hover:text-white transition">YouTube</a>
+<section class="kit" id="starter-kit">
+  <div class="wrap">
+    <h2>The Free Canadian Money Starter Kit</h2>
+    <p>One page. Plain language. It covers what a TFSA, RRSP and FHSA are, what each is best for, and how they fit together. Print it, screenshot it, stick it on the fridge.</p>
+    <div class="kit-grid">
+      <div>
+        <div class="paper">
+          <img src="kit-preview.png" alt="Canadian Money Starter Kit — free one-page cheat sheet preview" width="400">
+          <h3>What's inside</h3>
+          <ul>
+            <li>🍁 The three accounts, side by side</li>
+            <li>🍁 What each one is good for</li>
+            <li>🍁 Common mix-ups to avoid</li>
+            <li>🍁 Where to look for your own limits</li>
+          </ul>
         </div>
-        <p class="text-xs text-slate-500">© 2026 Canadian Wealth Lab • For education only — not financial advice.</p>
-        <p class="text-xs text-slate-600 mt-2">Made with the black cat in Toronto 🇨🇦</p>
-    </footer>
+        <div class="kit-cat">
+          <div class="in">
+            <img src="assets-v2/kit-cat.jpg" alt="Pishi, the black cat, keeping an eye on the cheat sheet">
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-card">
+          <p class="form-label">Free Canadian Money Starter Kit</p>
+          <p class="form-sub">A one-page cheat sheet on TFSA, RRSP and FHSA basics. Where to start, what each one is for, and what people mix up.</p>
+          <div id="kitEmbedWrapKit" class="kit-embed-wrap">
+            <script async data-uid="a15976ca9d" src="https://canadianwealthlab.kit.com/a15976ca9d/index.js"></script>
+            <label class="consent">
+              <input type="checkbox" class="kit-consent">
+              <span>I agree to receive email communications from Canadian Wealth Lab. Unsubscribe anytime.</span>
+            </label>
+            <p class="after-submit">Almost there! Check your inbox for a confirmation email and tap the link inside. (Not there in a few minutes? Peek in your promotions or spam folder.)</p>
+          </div>
+          <p class="microcopy">We'll send a quick confirmation link first. Then the PDF is yours.</p>
+        </div>
+        <div class="dl-row">
+          <a class="btn btn-ink" href="starter-kit.pdf">Download the PDF</a>
+        </div>
+        <p class="kit-note">Contribution limits and rules change, so the sheet points you to the official CRA pages instead of printing numbers that go out of date.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="stripe" aria-hidden="true"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
+  <div class="foot-in">
+    <div class="foot-tail">
+      <img src="assets-v2/footer-tail.jpg" alt="" aria-hidden="true">
+    </div>
+    <p class="foot-sign">Made in Canada, with a cat in the room.</p>
+    <nav class="foot-links">
+      <a href="https://www.youtube.com/@CanadaWealthLab" target="_blank" rel="noopener">YouTube</a>
+      <a href="#starter-kit">Starter Kit</a>
+      <a href="#about">About</a>
+      <a href="#privacy">Privacy</a>
+      <a href="mailto:canadianwealthlab@gmail.com">Contact</a>
+    </nav>
+    <p class="disclaimer" id="privacy">Canadian Wealth Lab is for education only. It isn't financial, tax or legal advice. Everyone's situation is different, so check the official sources or talk to a qualified professional before making big decisions.</p>
+    <p class="copy">© 2026 Canadian Wealth Lab</p>
+  </div>
+</footer>
+
+<script>
+  // Kit forms: require CASL consent before enabling submit (both placements)
+  document.querySelectorAll('.kit-embed-wrap').forEach(function(wrap) {
+    var consent = wrap.querySelector('.kit-consent');
+    if (!consent) return;
+    function gate() {
+      var btn = wrap.querySelector('.formkit-submit');
+      if (btn) btn.disabled = !consent.checked;
+    }
+    consent.addEventListener('change', gate);
+    var tries = 0;
+    var t = setInterval(function() {
+      gate();
+      if (wrap.querySelector('.formkit-submit') || ++tries > 40) clearInterval(t);
+    }, 500);
+    wrap.addEventListener('submit', function() {
+      var note = wrap.querySelector('.after-submit');
+      if (note) note.style.display = 'block';
+    }, true);
+  });
+</script>
 
 </body>
 </html>
