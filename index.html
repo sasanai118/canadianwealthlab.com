@@ -105,7 +105,9 @@
   .latest-card .lc-text{max-width:36rem}
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:8px}
   .tile{border:3px solid var(--ink);border-radius:24px;padding:24px 24px 20px;color:var(--ink);
-        box-shadow:5px 5px 0 var(--ink)}
+        box-shadow:5px 5px 0 var(--ink);display:block;text-decoration:none;cursor:pointer;
+        transition:transform .15s ease,box-shadow .15s ease}
+  .tile:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
   .tile h3{font-size:1.25rem;margin-bottom:6px}
   .tile p{font-size:.98rem}
   .t-peach{background:var(--peach)}.t-sage{background:var(--sage)}.t-rose{background:var(--rose)}
@@ -281,12 +283,12 @@
     </div>
     <p class="area-label">Pick your world</p>
     <div class="tiles">
-      <div class="tile t-peach"><h3>TFSA</h3><p>Where your tax-free money lives.</p></div>
-      <div class="tile t-sage"><h3>RRSP &amp; FHSA</h3><p>Saving for retirement and your first home.</p></div>
-      <div class="tile t-rose"><h3>CPP &amp; Retirement</h3><p>What you'll get, and when to ask for it.</p></div>
-      <div class="tile t-teal"><h3>Mortgage &amp; Housing</h3><p>Renewals, rates, buying and renting.</p></div>
-      <div class="tile t-terra"><h3>Canadian Family Finance</h3><p>Kids, grants and the household budget.</p></div>
-      <div class="tile t-butter"><h3>Money News</h3><p>What the headlines mean for your wallet.</p></div>
+      <a class="tile t-peach" href="https://www.youtube.com/playlist?list=PLQKErQ7m1yDV_UoQtcOqOFIYQfbcYs0tN" target="_blank" rel="noopener"><h3>TFSA</h3><p>Where your tax-free money lives.</p></a>
+      <a class="tile t-sage" href="https://www.youtube.com/playlist?list=PLQKErQ7m1yDV_UoQtcOqOFIYQfbcYs0tN" target="_blank" rel="noopener"><h3>RRSP &amp; FHSA</h3><p>Saving for retirement and your first home.</p></a>
+      <a class="tile t-rose" href="https://www.youtube.com/playlist?list=PLVREEdtfIvC0" target="_blank" rel="noopener"><h3>CPP &amp; Retirement</h3><p>What you'll get, and when to ask for it.</p></a>
+      <a class="tile t-teal" href="https://www.youtube.com/playlist?list=PLQKErQ7m1yDWHqg8sfVC5Uc0XYJx-UC78" target="_blank" rel="noopener"><h3>Mortgage &amp; Housing</h3><p>Renewals, rates, buying and renting.</p></a>
+      <a class="tile t-terra" href="https://www.youtube.com/playlist?list=PLAc-eVlLBrnw" target="_blank" rel="noopener"><h3>Canadian Family Finance</h3><p>Kids, grants and the household budget.</p></a>
+      <a class="tile t-butter" href="https://www.youtube.com/playlist?list=PLQKErQ7m1yDUzsdeEads6cp3rakrZ9FAh" target="_blank" rel="noopener"><h3>Money News</h3><p>What the headlines mean for your wallet.</p></a>
     </div>
     <div class="watch-btns">
       <a class="btn btn-ghost" href="https://www.youtube.com/@CanadaWealthLab" target="_blank" rel="noopener">Watch on YouTube</a>
