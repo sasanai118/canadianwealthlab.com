@@ -68,7 +68,12 @@
   .hero .subcopy{max-width:34rem;margin-bottom:22px}
   .watch-link{font-family:'Fredoka',sans-serif;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:3px solid var(--poppy)}
   .watch-link:hover{color:var(--poppy)}
-  .hero .merch-btn{margin-top:22px}
+  .hero .daily-line{font-family:'Fredoka',sans-serif;font-weight:500;font-size:1.08rem}
+  .hero .daily-line .watch-link{margin-left:12px;white-space:nowrap}
+  .hero-merch{display:flex;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap}
+  .merch-thumb{width:84px;background:var(--peach);border:3px solid var(--ink);border-radius:999px 999px 16px 16px;
+               padding:6px 6px 0;overflow:hidden;flex:none}
+  .merch-thumb img{width:100%;height:94px;object-fit:cover;object-position:center 15%;border-radius:999px 999px 10px 10px}
   .arch-stack{position:relative;padding:14px 26px 0}
   .arch-outer{background:var(--rose);border:3px solid var(--ink);border-radius:999px 999px 28px 28px;padding:22px 22px 0}
   .arch-inner{background:var(--peach);border-radius:999px 999px 20px 20px;overflow:hidden}
@@ -185,7 +190,7 @@
     .about-fig img{height:320px}
     .foot-tail{display:none}
     .btn{width:100%}
-    .watch-btns .btn,.latest-card .btn{width:auto}
+    .watch-btns .btn,.latest-card .btn,.hero-merch .btn{width:auto}
     .topbar .btn{width:auto}
   }
 </style>
@@ -210,9 +215,12 @@
       <p class="eyebrow">Canadian money, minus the jargon</p>
       <h1>Canadian Wealth Lab</h1>
       <h2 class="tagline">Build wealth in Canada, one smart move at a time.</h2>
-      <p class="subcopy">TFSA, RRSP, FHSA, mortgages, CPP. Explained plainly, with a little humour and a cat who has opinions. New video every day at 5 PM ET.</p>
-      <a class="watch-link" href="#watch">or watch the latest video →</a>
-      <a class="btn btn-ink merch-btn" href="https://canadian-wealth-lab.printify.me" target="_blank" rel="noopener">🐾 Shop Pishi Merch</a>
+      <p class="subcopy">Explained plainly, with a little humour and a cat who has opinions.</p>
+      <p class="daily-line">New video every day at 5 PM ET <a class="watch-link" href="#watch">Watch the latest video →</a></p>
+      <div class="hero-merch">
+        <span class="merch-thumb"><img src="assets-v2/merch-cat.jpg" alt="Pishi, the black cat"></span>
+        <a class="btn btn-ink" href="https://canadian-wealth-lab.printify.me" target="_blank" rel="noopener">🐾 Shop Pishi Merch</a>
+      </div>
     </div>
     <div class="hero-form">
       <div class="form-card" id="kit">
@@ -232,7 +240,7 @@
     <div class="arch-stack">
       <div class="arch-outer">
         <div class="arch-inner">
-          <img src="assets-v2/hero-cat.jpg" alt="Pishi, the black cat, sitting upright and looking at you">
+          <img src="assets-v2/hero-cat-hq.jpg" alt="Pishi, the black cat, sitting upright and looking at you">
         </div>
       </div>
     </div>
@@ -320,7 +328,7 @@
       <figure class="about-fig">
         <div class="arch-frame">
           <div class="in">
-            <img src="assets-v2/about-pishi.jpg" alt="Pishi, the black cat, in her portrait">
+            <img src="assets-v2/about-pishi-hq.jpg" alt="Pishi, the black cat, in her portrait">
           </div>
         </div>
       </figure>
@@ -337,7 +345,7 @@
     <div class="kit-grid">
       <div>
         <div class="paper">
-          <img src="kit-preview.png" alt="Canadian Money Starter Kit — free one-page cheat sheet preview" width="400">
+          <img src="assets-v2/kit-preview-v2.jpg" alt="Canadian Money Starter Kit — free cheat sheet preview: your first 5 moves" width="400">
           <h3>What's inside</h3>
           <ul>
             <li>🍁 The three accounts, side by side</li>
@@ -348,7 +356,7 @@
         </div>
         <div class="kit-cat">
           <div class="in">
-            <img src="assets-v2/kit-cat.jpg" alt="Pishi, the black cat, keeping an eye on the cheat sheet">
+            <img src="assets-v2/kit-cat-hq.jpg" alt="Pishi, the black cat, keeping an eye on the cheat sheet">
           </div>
         </div>
       </div>
@@ -379,7 +387,7 @@
   <div class="stripe" aria-hidden="true"><span class="s1"></span><span class="s2"></span><span class="s3"></span><span class="s4"></span></div>
   <div class="foot-in">
     <div class="foot-tail">
-      <img src="assets-v2/footer-tail.jpg" alt="" aria-hidden="true">
+      <img src="assets-v2/footer-tail-hq.jpg" alt="" aria-hidden="true">
     </div>
     <p class="foot-sign">Made in Canada, with a cat in the room.</p>
     <nav class="foot-links">
